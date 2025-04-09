@@ -1,5 +1,6 @@
 
 import { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { 
   Home, 
   Lightbulb, 
@@ -18,19 +19,29 @@ import { cn } from '@/lib/utils';
 
 const Sidebar = () => {
   const [collapsed, setCollapsed] = useState(false);
-  const [activeItem, setActiveItem] = useState('home');
+  const location = useLocation();
+  const currentPath = location.pathname;
+  
+  // Get active item based on current path
+  const getActiveItem = () => {
+    const path = currentPath.split('/')[1]; // Get the first part of the path
+    if (path === '') return 'home';
+    return path;
+  };
 
+  const activeItem = getActiveItem();
+  
   const menuItems = [
-    { id: 'home', icon: Home, label: 'Home Hub' },
-    { id: 'lights', icon: Lightbulb, label: 'Lights' },
-    { id: 'climate', icon: Thermometer, label: 'Climate' },
-    { id: 'security', icon: Lock, label: 'Security Hub' },
-    { id: 'energy', icon: Zap, label: 'Energy Insights' },
-    { id: 'scenes', icon: Film, label: 'Scenes' },
-    { id: 'assistant', icon: Bot, label: 'Sphere AI' },
-    { id: 'guests', icon: Users, label: 'Guests' },
-    { id: 'logs', icon: FileText, label: 'Activity Log' },
-    { id: 'settings', icon: Settings, label: 'Settings' },
+    { id: 'home', icon: Home, label: 'Home Hub', path: '/' },
+    { id: 'lights', icon: Lightbulb, label: 'Lights', path: '/lights' },
+    { id: 'climate', icon: Thermometer, label: 'Climate', path: '/climate' },
+    { id: 'security', icon: Lock, label: 'Security Hub', path: '/security' },
+    { id: 'energy', icon: Zap, label: 'Energy Insights', path: '/energy' },
+    { id: 'scenes', icon: Film, label: 'Scenes', path: '/scenes' },
+    { id: 'assistant', icon: Bot, label: 'Sphere AI', path: '/assistant' },
+    { id: 'guests', icon: Users, label: 'Guests', path: '/guests' },
+    { id: 'logs', icon: FileText, label: 'Activity Log', path: '/logs' },
+    { id: 'settings', icon: Settings, label: 'Settings', path: '/settings' },
   ];
 
   return (
@@ -43,20 +54,20 @@ const Sidebar = () => {
       <div className="flex flex-col h-full">
         <div className="py-4 space-y-1 flex-1">
           {menuItems.map((item) => (
-            <div 
-              key={item.id} 
+            <Link 
+              key={item.id}
+              to={item.path}
               className={cn(
                 "sidebar-item relative cursor-pointer",
                 activeItem === item.id && "active"
               )}
-              onClick={() => setActiveItem(item.id)}
             >
               {activeItem === item.id && (
                 <div className="absolute left-0 top-1/2 w-1 h-7 transform -translate-y-1/2 bg-cosmic-teal rounded-r-full shadow-[0_0_8px_rgba(0,229,229,0.8)]" />
               )}
               <item.icon size={20} className={activeItem === item.id ? "text-cosmic-teal" : ""} />
               {!collapsed && <span className="transition-opacity">{item.label}</span>}
-            </div>
+            </Link>
           ))}
         </div>
         
