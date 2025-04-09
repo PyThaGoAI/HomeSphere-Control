@@ -72,7 +72,7 @@ const Sidebar = () => {
           ))}
         </div>
         
-        {/* Collapse toggle button - Fixed with better styling */}
+        {/* Improved collapse toggle button with larger size and better visibility */}
         <div className="p-4 border-t border-cosmic-teal/20">
           <button 
             onClick={() => setCollapsed(!collapsed)}
@@ -81,10 +81,10 @@ const Sidebar = () => {
           >
             <div className="flex items-center justify-center w-full">
               {collapsed ? (
-                <ChevronRight size={20} className="text-cosmic-teal animate-pulse" />
+                <ChevronRight size={28} className="text-cosmic-teal animate-pulse" />
               ) : (
                 <>
-                  <ChevronLeft size={20} />
+                  <ChevronLeft size={24} />
                   <span className="ml-2">Collapse</span>
                 </>
               )}
