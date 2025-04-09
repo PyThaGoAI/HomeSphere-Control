@@ -131,4 +131,30 @@
   .status-warning {
     @apply bg-cosmic-amber amber-glow animate-pulse-amber;
   }
+
+  /* New animations */
+  @keyframes pulse-glow {
+    0%, 100% { opacity: 0.8; filter: brightness(0.8); }
+    50% { opacity: 1; filter: brightness(1.2); }
+  }
+
+  @keyframes pulse-amber {
+    0%, 100% { opacity: 0.8; filter: brightness(0.8); }
+    50% { opacity: 1; filter: brightness(1.2); }
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s infinite ease-in-out;
+  }
+
+  .animate-pulse-amber {
+    animation: pulse-amber 2s infinite ease-in-out;
+  }
+
+  /* Responsive improvements */
+  @media (max-width: 768px) {
+    .module-card {
+      @apply p-3;
+    }
+  }
 }

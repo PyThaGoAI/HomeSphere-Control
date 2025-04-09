@@ -72,16 +72,23 @@ const Sidebar = () => {
           ))}
         </div>
         
-        {/* Collapse toggle button */}
+        {/* Collapse toggle button - Fixed with better styling */}
         <div className="p-4 border-t border-cosmic-teal/20">
           <button 
             onClick={() => setCollapsed(!collapsed)}
-            className="sidebar-item justify-center md:justify-start w-full"
+            className="sidebar-item justify-center md:justify-start w-full text-white hover:text-cosmic-teal transition-colors"
+            aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
           >
-            {collapsed ? <ChevronRight size={20} /> : <>
-              <ChevronLeft size={20} />
-              {!collapsed && <span>Collapse</span>}
-            </>}
+            <div className="flex items-center justify-center w-full">
+              {collapsed ? (
+                <ChevronRight size={20} className="text-cosmic-teal animate-pulse" />
+              ) : (
+                <>
+                  <ChevronLeft size={20} />
+                  <span className="ml-2">Collapse</span>
+                </>
+              )}
+            </div>
           </button>
         </div>
       </div>
