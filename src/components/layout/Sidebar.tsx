@@ -18,7 +18,8 @@ import {
 import { cn } from '@/lib/utils';
 
 const Sidebar = () => {
-  const [collapsed, setCollapsed] = useState(false);
+  // Changed default state to collapsed (true)
+  const [collapsed, setCollapsed] = useState(true);
   const location = useLocation();
   const currentPath = location.pathname;
   

@@ -2,6 +2,7 @@
 import { ReactNode } from 'react';
 import Header from './Header';
 import Sidebar from './Sidebar';
+import Footer from './Footer';
 import { SidebarProvider } from '@/components/ui/sidebar';
 
 interface DashboardLayoutProps {
@@ -15,7 +16,7 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
         <Header />
         <div className="flex flex-1 overflow-hidden">
           <Sidebar />
-          <main className="flex-1 overflow-auto p-6">
+          <main className="flex-1 overflow-auto p-6 flex flex-col">
             <div className="stars-container absolute inset-0 overflow-hidden z-0 pointer-events-none">
               {Array.from({ length: 100 }).map((_, i) => (
                 <div
@@ -43,9 +44,10 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
                 />
               ))}
             </div>
-            <div className="relative z-10">
+            <div className="relative z-10 flex-1">
               {children}
             </div>
+            <Footer />
           </main>
         </div>
       </div>
