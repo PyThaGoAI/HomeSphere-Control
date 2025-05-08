@@ -72,7 +72,7 @@ const Sidebar = () => {
           ))}
         </div>
         
-        {/* Improved collapse toggle button with larger size and better visibility */}
+        {/* Enhanced toggle button with larger size and better visibility */}
         <div className="p-4 border-t border-cosmic-teal/20">
           <button 
             onClick={() => setCollapsed(!collapsed)}
