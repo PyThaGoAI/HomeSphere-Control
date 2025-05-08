@@ -25,10 +25,32 @@ import Analytics from "./pages/Analytics";
 import Network from "./pages/Network"; 
 import Spatial from "./pages/Spatial";
 
+import './App.css';
+
 const queryClient = new QueryClient();
+
+// Adăugăm stiluri globale pentru a asigura că toate textele sunt albe
+const globalStyles = `
+  * {
+    color: white !important;
+  }
+  
+  .recharts-text {
+    fill: white !important;
+  }
+  
+  .tooltip {
+    color: white !important;
+  }
+  
+  button, a, select, input, textarea {
+    color: white !important;
+  }
+`;
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
+    <style>{globalStyles}</style>
     <TooltipProvider>
       <Toaster />
       <Sonner />

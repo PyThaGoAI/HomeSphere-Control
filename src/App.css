@@ -1,3 +1,4 @@
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -38,5 +39,17 @@
 }
 
 .read-the-docs {
-  color: #888;
+  color: white;
+}
+
+/* Override pentru componentele shadcn și recharts pentru a asigura text alb */
+.recharts-text tspan,
+.recharts-cartesian-axis-tick-value tspan {
+  fill: white !important;
+}
+
+.Button, .Card, .CardTitle, .CardDescription, .CardContent, 
+.Tabs, .TabsTrigger, .TabsContent,
+.Select, .SelectTrigger, .SelectContent, .SelectItem {
+  color: white !important;
 }
