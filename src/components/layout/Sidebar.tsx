@@ -13,7 +13,12 @@ import {
   Bot,
   Users,
   ChevronLeft,
-  ChevronRight
+  ChevronRight,
+  Cpu,
+  Hexagon,
+  Gitlab,
+  Map,
+  Activity
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -41,6 +46,13 @@ const Sidebar = () => {
     { id: 'scenes', icon: Film, label: 'Scenes', path: '/scenes' },
     { id: 'assistant', icon: Bot, label: 'Sphere AI', path: '/assistant' },
     { id: 'guests', icon: Users, label: 'Guests', path: '/guests' },
+    // New pages added here
+    { id: 'automation', icon: Cpu, label: 'Automation Lab', path: '/automation' },
+    { id: 'ecosystem', icon: Hexagon, label: 'Ecosystem', path: '/ecosystem' },
+    { id: 'analytics', icon: Activity, label: 'Analytics', path: '/analytics' },
+    { id: 'network', icon: Gitlab, label: 'Network Mesh', path: '/network' },
+    { id: 'spatial', icon: Map, label: 'Spatial Map', path: '/spatial' },
+    // Original pages continue
     { id: 'logs', icon: FileText, label: 'Activity Log', path: '/logs' },
     { id: 'settings', icon: Settings, label: 'Settings', path: '/settings' },
   ];
@@ -53,7 +65,7 @@ const Sidebar = () => {
       )}
     >
       <div className="flex flex-col h-full">
-        <div className="py-4 space-y-1 flex-1">
+        <div className="py-4 space-y-1 flex-1 overflow-y-auto custom-scrollbar">
           {menuItems.map((item) => (
             <Link 
               key={item.id}

@@ -18,6 +18,13 @@ import Guests from "./pages/Guests";
 import Logs from "./pages/Logs";
 import Settings from "./pages/Settings";
 
+// Import the new creative pages
+import Automation from "./pages/Automation";
+import Ecosystem from "./pages/Ecosystem";
+import Analytics from "./pages/Analytics";
+import Network from "./pages/Network"; 
+import Spatial from "./pages/Spatial";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -37,6 +44,13 @@ const App = () => (
           <Route path="/guests" element={<Guests />} />
           <Route path="/logs" element={<Logs />} />
           <Route path="/settings" element={<Settings />} />
+          
+          {/* New creative page routes */}
+          <Route path="/automation" element={<Automation />} />
+          <Route path="/ecosystem" element={<Ecosystem />} />
+          <Route path="/analytics" element={<Analytics />} />
+          <Route path="/network" element={<Network />} />
+          <Route path="/spatial" element={<Spatial />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Exo:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
@@ -237,6 +238,23 @@
     .module-card {
       @apply p-3;
     }
+  }
+  
+  /* Custom scrollbar for sidebar and other elements */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-cosmic-teal/20 rounded-full;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    @apply bg-cosmic-teal/40;
   }
 }
 
