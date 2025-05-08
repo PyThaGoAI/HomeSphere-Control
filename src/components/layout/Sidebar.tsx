@@ -81,10 +81,10 @@ const Sidebar = () => {
           >
             <div className="flex items-center justify-center w-full">
               {collapsed ? (
-                <ChevronRight size={28} className="text-cosmic-teal animate-pulse" />
+                <ChevronRight size={32} className="text-cosmic-teal animate-pulse-glow" />
               ) : (
                 <>
-                  <ChevronLeft size={24} />
+                  <ChevronLeft size={28} />
                   <span className="ml-2">Collapse</span>
                 </>
               )}
