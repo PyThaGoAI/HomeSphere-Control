@@ -52,16 +52,6 @@
     background-image: radial-gradient(circle at 10% 20%, #1A2A44 0%, #0A1428 80%);
   }
 
-  /* Make sure all text is white by default */
-  p, h1, h2, h3, h4, h5, h6, span, div, button, a, label, input, select, textarea {
-    @apply text-white;
-  }
-
-  /* Override any dark text in specific components */
-  .card-title, .card-description, .tabs-content, .select-item {
-    @apply text-white;
-  }
-
   /* Custom styles for our cosmic theme */
   .cosmic-gradient {
     @apply bg-gradient-to-br from-cosmic-blue to-cosmic-blue-light;
@@ -243,18 +233,6 @@
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   }
 
-  /* Override shadcn UI components to use white text */
-  .Button, .Card, .CardHeader, .CardTitle, .CardDescription, .CardContent,
-  .Select, .SelectTrigger, .SelectContent, .SelectItem,
-  .Tabs, .TabsList, .TabsTrigger, .TabsContent {
-    @apply text-white;
-  }
-
-  /* Override Recharts component text */
-  .recharts-text {
-    @apply fill-white;
-  }
-
   /* Responsive improvements */
   @media (max-width: 768px) {
     .module-card {
@@ -309,14 +287,3 @@
 ::-webkit-scrollbar-thumb:hover {
   @apply bg-cosmic-teal/50;
 }
-
-/* Override specific shadcn components */
-.Button {
-  @apply text-white;
-}
-
-/* Force tooltip text to be white */
-.tooltip-content, [data-state="open"], [data-state="delayed-open"] {
-  @apply text-white;
-}
-
