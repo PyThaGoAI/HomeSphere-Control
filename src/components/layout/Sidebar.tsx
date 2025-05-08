@@ -84,23 +84,24 @@ const Sidebar = () => {
           ))}
         </div>
         
-        {/* Enhanced toggle button with larger size and better visibility */}
+        {/* Enhanced toggle button with better styling */}
         <div className="p-4 border-t border-cosmic-teal/20">
           <button 
             onClick={() => setCollapsed(!collapsed)}
-            className="sidebar-item justify-center md:justify-start w-full text-white hover:text-cosmic-teal transition-colors"
+            className="cosmic-gradient rounded-full p-2 w-full flex items-center justify-center transition-all duration-300 hover:scale-105 hover:shadow-[0_0_15px_rgba(0,229,229,0.7)] text-white group"
             aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
           >
-            <div className="flex items-center justify-center w-full">
+            <div className={`flex items-center justify-center ${collapsed ? "" : "w-full"}`}>
               {collapsed ? (
-                <ChevronRight size={32} className="text-cosmic-teal animate-pulse-glow" />
+                <ChevronRight size={28} className="text-white animate-pulse-glow" />
               ) : (
                 <>
-                  <ChevronLeft size={28} />
-                  <span className="ml-2">Collapse</span>
+                  <ChevronLeft size={24} className="mr-2" />
+                  <span className="font-orbitron tracking-wide">Collapse</span>
                 </>
               )}
             </div>
+            <div className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-50 bg-cosmic-teal/10 animate-pulse-glow pointer-events-none"></div>
           </button>
         </div>
       </div>
