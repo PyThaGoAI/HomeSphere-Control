@@ -5,239 +5,129 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 224 71.4% 4.1%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 224 71.4% 4.1%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 224 71.4% 4.1%;
-
-    --primary: 262.1 83.3% 57.8%;
-    --primary-foreground: 210 20% 98%;
-
-    --secondary: 220 14.3% 95.9%;
-    --secondary-foreground: 220.9 39.3% 11%;
-
-    --muted: 220 14.3% 95.9%;
-    --muted-foreground: 220 8.9% 46.1%;
-
-    --accent: 220 14.3% 95.9%;
-    --accent-foreground: 220.9 39.3% 11%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 20% 98%;
-
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 262.1 83.3% 57.8%;
-
-    --radius: 0.5rem;
+    --cosmic-blue: #0f172a;
+    --cosmic-blue-light: #1e293b;
+    --cosmic-teal: #06b6d4;
+    --cosmic-amber: #f59e0b;
   }
 
-  .dark {
-    --background: 224 71.4% 4.1%;
-    --foreground: 210 20% 98%;
-
-    --card: 224 71.4% 4.1%;
-    --card-foreground: 210 20% 98%;
-
-    --popover: 224 71.4% 4.1%;
-    --popover-foreground: 210 20% 98%;
-
-    --primary: 263.4 70% 50.4%;
-    --primary-foreground: 210 20% 98%;
-
-    --secondary: 215 27.9% 16.9%;
-    --secondary-foreground: 210 20% 98%;
-
-    --muted: 215 27.9% 16.9%;
-    --muted-foreground: 217.9 10.6% 64.9%;
-
-    --accent: 215 27.9% 16.9%;
-    --accent-foreground: 210 20% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 20% 98%;
-
-    --border: 215 27.9% 16.9%;
-    --input: 215 27.9% 16.9%;
-    --ring: 263.4 70% 50.4%;
-  }
-
-  /* HomeSphere Landing Page Styles */
-  .bg-cosmic {
-    background-color: #0a0d1c;
-    background-image: radial-gradient(circle at top right, #0f172a, #0a0d1c);
-  }
-
-  .bg-cosmic-blue {
-    background-color: #0a0d1c;
-  }
-
-  .bg-cosmic-blue-light {
-    background-color: #0f172a;
-  }
-
-  .text-cosmic-teal {
-    color: #5eead4;
-  }
-
-  .text-cosmic-amber {
-    color: #fcd34d;
-  }
-
-  .from-cosmic-teal {
-    --tw-gradient-from: #5eead4;
-  }
-
-  .from-cosmic-blue {
-    --tw-gradient-from: #0a0d1c;
-  }
-
-  .from-cosmic-blue-light {
-    --tw-gradient-from: #0f172a;
-  }
-
-  .from-cosmic-amber {
-    --tw-gradient-from: #fcd34d;
-  }
-
-  .to-cosmic-blue {
-    --tw-gradient-to: #0a0d1c;
-  }
-
-  .to-cosmic-blue-light {
-    --tw-gradient-to: #0f172a;
-  }
-
-  .to-cosmic-teal {
-    --tw-gradient-to: #5eead4;
-  }
-
-  .to-cosmic-amber {
-    --tw-gradient-to: #fcd34d;
+  body {
+    font-family: "Inter", sans-serif;
+    background-color: var(--cosmic-blue);
+    color: white;
   }
 
   .font-orbitron {
-    font-family: 'Orbitron', sans-serif;
+    font-family: "Orbitron", sans-serif;
+  }
+}
+
+@layer components {
+  .bg-cosmic {
+    background-color: var(--cosmic-blue);
+    background-image: radial-gradient(
+      circle at top right,
+      rgba(30, 41, 59, 0.5) 0%,
+      rgba(15, 23, 42, 0.8) 100%
+    );
+  }
+
+  .glass-card {
+    border-radius: 1rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 4px 32px rgba(0, 0, 0, 0.2);
   }
 
   .text-gradient-premium {
-    background: linear-gradient(to right, #5eead4, #fcd34d);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    @apply bg-gradient-to-r from-cosmic-teal via-cosmic-amber to-purple-500 bg-clip-text text-transparent;
   }
 
-  /* Stars animation */
-  .star {
-    position: absolute;
-    background-color: #ffffff;
-    border-radius: 50%;
-    animation: twinkle 4s infinite ease-in-out;
+  .teal-glow {
+    box-shadow: 0 0 15px 2px rgba(6, 182, 212, 0.3);
   }
 
-  @keyframes twinkle {
-    0%, 100% { opacity: 0.3; }
-    50% { opacity: 1; }
+  .amber-glow {
+    box-shadow: 0 0 15px 2px rgba(245, 158, 11, 0.3);
   }
+}
 
-  @keyframes meteor {
-    0% { 
-      transform: translateX(0) translateY(0) rotate(-45deg);
-      opacity: 1;
-    }
-    100% { 
-      transform: translateX(-500px) translateY(200px) rotate(-45deg);
-      opacity: 0;
-    }
-  }
-
-  .animate-meteor {
-    animation: meteor 5s linear forwards;
-  }
-
-  /* Float animation for UI elements */
+@layer utilities {
   .animate-float {
     animation: float 6s ease-in-out infinite;
   }
 
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-  }
-
-  /* Orbit animations */
-  .animate-orbit {
-    animation: orbit 20s linear infinite;
-  }
-
-  .animate-orbit-reverse {
-    animation: orbit 15s linear infinite reverse;
-  }
-
-  @keyframes orbit {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
-
-  /* Slow spin animation */
-  .animate-spin-slow {
-    animation: spin 40s linear infinite;
-  }
-
-  @keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-  }
-
-  /* Pulse glow effect */
   .animate-pulse-glow {
-    animation: pulse-glow 2s infinite ease-in-out;
+    animation: pulse-glow 2s ease-in-out infinite;
   }
 
-  @keyframes pulse-glow {
-    0%, 100% { 
-      box-shadow: 0 0 10px 2px rgba(94, 234, 212, 0.2);
-      opacity: 0.8; 
-    }
-    50% { 
-      box-shadow: 0 0 15px 5px rgba(94, 234, 212, 0.4);
-      opacity: 1; 
-    }
+  .animate-spin-slow {
+    animation: spin 30s linear infinite;
   }
 
-  /* Glowing effects */
-  .teal-glow {
-    box-shadow: 0 0 10px 2px rgba(94, 234, 212, 0.3);
-  }
-
-  .amber-glow {
-    box-shadow: 0 0 10px 2px rgba(252, 211, 77, 0.3);
-  }
-
-  /* Glass card effect */
-  .glass-card {
-    background: rgba(15, 23, 42, 0.4);
-    border-radius: 16px;
-  }
-
-  /* 3D perspective effects */
-  .perspective-1000 {
-    perspective: 1000px;
-  }
-
-  .hover-rotate-y-3:hover {
-    transform: rotateY(3deg);
+  .animate-meteor {
+    animation: meteor 6s linear infinite;
   }
 }
 
-@layer base {
-  * {
-    @apply border-border;
+@keyframes float {
+  0% {
+    transform: translateY(0px);
   }
-  body {
-    @apply bg-background text-foreground;
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 1;
+    filter: brightness(1);
+  }
+  50% {
+    opacity: 0.7;
+    filter: brightness(1.3);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes meteor {
+  0% {
+    transform: translateX(0) translateY(0) rotate(-45deg);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-500px) translateY(500px) rotate(-45deg);
+    opacity: 0;
+  }
+}
+
+.star {
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  animation: star-twinkle 4s ease-in-out infinite;
+}
+
+@keyframes star-twinkle {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.8;
   }
 }
