@@ -25,6 +25,9 @@ import Analytics from "./pages/Analytics";
 import Network from "./pages/Network"; 
 import Spatial from "./pages/Spatial";
 
+// Import the new landing page
+import LandingPage from "./pages/LandingPage";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -51,6 +54,9 @@ const App = () => (
           <Route path="/analytics" element={<Analytics />} />
           <Route path="/network" element={<Network />} />
           <Route path="/spatial" element={<Spatial />} />
+          
+          {/* Add the landing page route */}
+          <Route path="/landing" element={<LandingPage />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
