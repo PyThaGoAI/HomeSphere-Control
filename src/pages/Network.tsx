@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import DashboardLayout from '@/components/layout/DashboardLayout';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
@@ -49,12 +48,12 @@ const Network = () => {
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="flex justify-between items-center">
-                <span className="text-sm">Connection Status</span>
-                <Badge className="bg-cosmic-teal text-black">Online</Badge>
+                <span className="text-sm text-white">Connection Status</span>
+                <Badge className="bg-cosmic-teal text-white">Online</Badge>
               </div>
               
               <div className="space-y-1">
-                <div className="flex justify-between text-xs">
+                <div className="flex justify-between text-xs text-white">
                   <span>Signal Strength</span>
                   <span>Excellent</span>
                 </div>
@@ -64,27 +63,27 @@ const Network = () => {
               <div className="grid grid-cols-2 gap-4 text-sm">
                 <div>
                   <div className="text-white/60 text-xs">SSID</div>
-                  <div className="font-medium">HomeSphere_Main</div>
+                  <div className="font-medium text-white">HomeSphere_Main</div>
                 </div>
                 <div>
                   <div className="text-white/60 text-xs">Security</div>
-                  <div className="font-medium">WPA3</div>
+                  <div className="font-medium text-white">WPA3</div>
                 </div>
                 <div>
                   <div className="text-white/60 text-xs">Band</div>
-                  <div className="font-medium">5GHz</div>
+                  <div className="font-medium text-white">5GHz</div>
                 </div>
                 <div>
                   <div className="text-white/60 text-xs">Channel</div>
-                  <div className="font-medium">36 (Auto)</div>
+                  <div className="font-medium text-white">36 (Auto)</div>
                 </div>
                 <div>
                   <div className="text-white/60 text-xs">IP Address</div>
-                  <div className="font-medium">192.168.1.1</div>
+                  <div className="font-medium text-white">192.168.1.1</div>
                 </div>
                 <div>
                   <div className="text-white/60 text-xs">MAC Address</div>
-                  <div className="font-medium">A4:C3:...:F8</div>
+                  <div className="font-medium text-white">A4:C3:...:F8</div>
                 </div>
               </div>
             </CardContent>
@@ -152,7 +151,7 @@ const Network = () => {
               <div className="relative h-32 w-full">
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-center">
-                    <div className="text-3xl font-bold">5.2</div>
+                    <div className="text-3xl font-bold text-white">5.2</div>
                     <div className="text-sm text-white/60">GB Today</div>
                   </div>
                 </div>
@@ -177,25 +176,25 @@ const Network = () => {
                 <div className="flex items-center justify-between p-3 bg-white/5 rounded-lg">
                   <div className="flex items-center">
                     <div className="w-2 h-2 rounded-full bg-cosmic-teal mr-2"></div>
-                    <span className="text-sm">Media Streaming</span>
+                    <span className="text-sm text-white">Media Streaming</span>
                   </div>
-                  <span>2.8 GB</span>
+                  <span className="text-white">2.8 GB</span>
                 </div>
                 
                 <div className="flex items-center justify-between p-3 bg-white/5 rounded-lg">
                   <div className="flex items-center">
                     <div className="w-2 h-2 rounded-full bg-cosmic-amber mr-2"></div>
-                    <span className="text-sm">Security Cameras</span>
+                    <span className="text-sm text-white">Security Cameras</span>
                   </div>
-                  <span>1.5 GB</span>
+                  <span className="text-white">1.5 GB</span>
                 </div>
                 
                 <div className="flex items-center justify-between p-3 bg-white/5 rounded-lg">
                   <div className="flex items-center">
                     <div className="w-2 h-2 rounded-full bg-white/50 mr-2"></div>
-                    <span className="text-sm">Other Devices</span>
+                    <span className="text-sm text-white">Other Devices</span>
                   </div>
-                  <span>0.9 GB</span>
+                  <span className="text-white">0.9 GB</span>
                 </div>
               </div>
             </CardContent>
@@ -235,18 +234,18 @@ const Network = () => {
                       <div className="flex items-center">
                         <div className={`w-2 h-2 rounded-full mr-3 ${device.status === 'optimal' ? 'bg-cosmic-teal' : 'bg-cosmic-amber'}`}></div>
                         <div>
-                          <div className="font-medium">{device.name}</div>
+                          <div className="font-medium text-white">{device.name}</div>
                           <div className="text-xs text-white/60">{device.type} • {device.ip}</div>
                         </div>
                       </div>
                       <div className="flex items-center gap-4 mt-2 sm:mt-0 justify-between sm:justify-start">
                         <div className="text-xs">
                           <div className="text-white/60">Bandwidth</div>
-                          <div>{device.bandwidth}</div>
+                          <div className="text-white">{device.bandwidth}</div>
                         </div>
                         <div className="text-xs">
                           <div className="text-white/60">Connected</div>
-                          <div>{device.connected}</div>
+                          <div className="text-white">{device.connected}</div>
                         </div>
                         <Button variant="ghost" size="sm" className="ml-2">Details</Button>
                       </div>

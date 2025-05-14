@@ -44,10 +44,10 @@ const Ecosystem = () => {
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cosmic-teal to-transparent"></div>
             <CardHeader>
               <div className="flex justify-between">
-                <Badge className="bg-cosmic-teal text-black">Connected</Badge>
+                <Badge className="bg-cosmic-teal text-white">Connected</Badge>
                 <span className="text-xs text-white/60">v3.2.1</span>
               </div>
-              <CardTitle className="flex items-center gap-2">
+              <CardTitle className="flex items-center gap-2 text-white">
                 <div className="w-8 h-8 bg-cosmic-teal/20 flex items-center justify-center rounded-md">
                   <Hexagon size={20} className="text-cosmic-teal" />
                 </div>
@@ -58,7 +58,7 @@ const Ecosystem = () => {
             <CardContent>
               <div className="space-y-4">
                 <div>
-                  <div className="flex justify-between text-xs mb-1">
+                  <div className="flex justify-between text-xs mb-1 text-white">
                     <span>System Health</span>
                     <span>Excellent</span>
                   </div>
@@ -68,19 +68,19 @@ const Ecosystem = () => {
                 <div className="grid grid-cols-2 gap-2 text-xs">
                   <div className="flex flex-col gap-1">
                     <span className="text-white/60">Connected Devices</span>
-                    <span className="font-medium">34 / 50</span>
+                    <span className="font-medium text-white">34 / 50</span>
                   </div>
                   <div className="flex flex-col gap-1">
                     <span className="text-white/60">Uptime</span>
-                    <span className="font-medium">43 days</span>
+                    <span className="font-medium text-white">43 days</span>
                   </div>
                   <div className="flex flex-col gap-1">
                     <span className="text-white/60">Protocols</span>
-                    <span className="font-medium">Z-Wave, Zigbee, BLE</span>
+                    <span className="font-medium text-white">Z-Wave, Zigbee, BLE</span>
                   </div>
                   <div className="flex flex-col gap-1">
                     <span className="text-white/60">Signal Strength</span>
-                    <span className="font-medium">Excellent</span>
+                    <span className="font-medium text-white">Excellent</span>
                   </div>
                 </div>
               </div>
@@ -103,31 +103,31 @@ const Ecosystem = () => {
             >
               <CardHeader>
                 <div className="flex justify-between">
-                  <Badge className={index === 3 ? "bg-cosmic-amber text-black" : "bg-cosmic-teal/80 text-white"}>
+                  <Badge className={index === 3 ? "bg-cosmic-amber text-white" : "bg-cosmic-teal/80 text-white"}>
                     {index === 3 ? "Low Battery" : "Connected"}
                   </Badge>
                   <span className="text-xs text-white/60">v2.0.{Math.floor(Math.random() * 9) + 1}</span>
                 </div>
-                <CardTitle className="text-base">{device}</CardTitle>
+                <CardTitle className="text-base text-white">{device}</CardTitle>
                 <CardDescription>{["Living Room", "Bedroom", "Kitchen", "Front Door", "Hallway"][index]}</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-2 gap-2 text-xs">
                   <div className="flex flex-col gap-1">
                     <span className="text-white/60">Type</span>
-                    <span className="font-medium">{["Sensor", "Lighting", "Climate", "Security", "Sensor"][index]}</span>
+                    <span className="font-medium text-white">{["Sensor", "Lighting", "Climate", "Security", "Sensor"][index]}</span>
                   </div>
                   <div className="flex flex-col gap-1">
                     <span className="text-white/60">Battery</span>
-                    <span className="font-medium">{index === 3 ? "18%" : "92%"}</span>
+                    <span className="font-medium text-white">{index === 3 ? "18%" : "92%"}</span>
                   </div>
                   <div className="flex flex-col gap-1">
                     <span className="text-white/60">Protocol</span>
-                    <span className="font-medium">{["Z-Wave", "Zigbee", "Wi-Fi", "Bluetooth", "Z-Wave"][index]}</span>
+                    <span className="font-medium text-white">{["Z-Wave", "Zigbee", "Wi-Fi", "Bluetooth", "Z-Wave"][index]}</span>
                   </div>
                   <div className="flex flex-col gap-1">
                     <span className="text-white/60">Signal</span>
-                    <span className="font-medium">{index === 4 ? "Fair" : "Good"}</span>
+                    <span className="font-medium text-white">{index === 4 ? "Fair" : "Good"}</span>
                   </div>
                 </div>
               </CardContent>
@@ -169,7 +169,7 @@ const Ecosystem = () => {
                   <div className="w-8 h-8 rounded-md bg-white/10 flex items-center justify-center">
                     <Info size={16} className="text-white/70" />
                   </div>
-                  <span>{integration.name}</span>
+                  <span className="text-white">{integration.name}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="text-xs text-white/60">{integration.status}</span>

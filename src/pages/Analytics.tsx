@@ -1,4 +1,3 @@
-
 import DashboardLayout from '@/components/layout/DashboardLayout';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -69,7 +68,7 @@ const Analytics = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <Card className="bg-cosmic-blue/30 border border-cosmic-teal/20 backdrop-blur-md overflow-hidden">
             <CardHeader className="pb-2">
-              <CardTitle className="text-lg flex items-center gap-2">
+              <CardTitle className="text-lg flex items-center gap-2 text-white">
                 <div className="bg-cosmic-teal/20 w-8 h-8 rounded-md flex items-center justify-center">
                   <Activity size={18} className="text-cosmic-teal" />
                 </div>
@@ -89,7 +88,7 @@ const Analytics = () => {
               <div className="grid grid-cols-2 gap-2 text-center mt-4">
                 <div className="bg-white/5 rounded-md py-2">
                   <div className="text-sm text-white/60">Yesterday</div>
-                  <div className="font-medium">82%</div>
+                  <div className="font-medium text-white">82%</div>
                 </div>
                 <div className="bg-white/5 rounded-md py-2">
                   <div className="text-sm text-white/60">Improvement</div>
@@ -101,7 +100,7 @@ const Analytics = () => {
           
           <Card className="bg-cosmic-blue/30 border border-cosmic-teal/20 backdrop-blur-md overflow-hidden">
             <CardHeader className="pb-2">
-              <CardTitle className="text-lg flex items-center gap-2">
+              <CardTitle className="text-lg flex items-center gap-2 text-white">
                 <div className="bg-cosmic-teal/20 w-8 h-8 rounded-md flex items-center justify-center">
                   <BarChart3 size={18} className="text-cosmic-teal" />
                 </div>
@@ -140,7 +139,7 @@ const Analytics = () => {
           
           <Card className="bg-cosmic-blue/30 border border-cosmic-teal/20 backdrop-blur-md overflow-hidden">
             <CardHeader className="pb-2">
-              <CardTitle className="text-lg">System Performance</CardTitle>
+              <CardTitle className="text-lg text-white">System Performance</CardTitle>
               <CardDescription>Response time & reliability</CardDescription>
             </CardHeader>
             <CardContent>
@@ -180,10 +179,10 @@ const Analytics = () => {
                 <Card className="bg-cosmic-blue/30 border border-cosmic-teal/20 backdrop-blur-md overflow-hidden">
                   <CardHeader>
                     <div className="flex justify-between items-center">
-                      <CardTitle>Energy Consumption Trends</CardTitle>
+                      <CardTitle className="text-white">Energy Consumption Trends</CardTitle>
                       <Select defaultValue="daily">
                         <SelectTrigger className="w-[100px] bg-cosmic-blue/30 border-cosmic-teal/20 h-8">
-                          <SelectValue placeholder="View" />
+                          <SelectValue placeholder="View" className="text-white" />
                         </SelectTrigger>
                         <SelectContent className="bg-cosmic-blue border border-cosmic-teal/20">
                           <SelectItem value="daily">Daily</SelectItem>
@@ -222,17 +221,17 @@ const Analytics = () => {
                     <div className="grid grid-cols-3 gap-4 mt-6">
                       <div className="text-center p-3 bg-white/5 rounded-lg">
                         <div className="text-xs text-white/60">Daily Average</div>
-                        <div className="text-xl font-medium">4.7 kWh</div>
+                        <div className="text-xl font-medium text-white">4.7 kWh</div>
                         <div className="text-xs text-cosmic-teal">-12% from last week</div>
                       </div>
                       <div className="text-center p-3 bg-white/5 rounded-lg">
                         <div className="text-xs text-white/60">Peak Usage</div>
-                        <div className="text-xl font-medium">8.2 kWh</div>
+                        <div className="text-xl font-medium text-white">8.2 kWh</div>
                         <div className="text-xs text-cosmic-teal">Wed, 2-4pm</div>
                       </div>
                       <div className="text-center p-3 bg-white/5 rounded-lg">
                         <div className="text-xs text-white/60">Projected Monthly</div>
-                        <div className="text-xl font-medium">142 kWh</div>
+                        <div className="text-xl font-medium text-white">142 kWh</div>
                         <div className="text-xs text-cosmic-teal">-8% from last month</div>
                       </div>
                     </div>
@@ -243,7 +242,7 @@ const Analytics = () => {
               <TabsContent value="comfort">
                 <Card className="bg-cosmic-blue/30 border border-cosmic-teal/20 backdrop-blur-md overflow-hidden">
                   <CardHeader>
-                    <CardTitle>Comfort Analysis</CardTitle>
+                    <CardTitle className="text-white">Comfort Analysis</CardTitle>
                     <CardDescription>Indoor environment quality metrics</CardDescription>
                   </CardHeader>
                   <CardContent>
@@ -257,7 +256,7 @@ const Analytics = () => {
               <TabsContent value="security">
                 <Card className="bg-cosmic-blue/30 border border-cosmic-teal/20 backdrop-blur-md overflow-hidden">
                   <CardHeader>
-                    <CardTitle>Security Analytics</CardTitle>
+                    <CardTitle className="text-white">Security Analytics</CardTitle>
                     <CardDescription>System performance and event analysis</CardDescription>
                   </CardHeader>
                   <CardContent>
@@ -273,7 +272,7 @@ const Analytics = () => {
           <div>
             <Card className="bg-cosmic-blue/30 border border-cosmic-teal/20 backdrop-blur-md overflow-hidden">
               <CardHeader>
-                <CardTitle>Recent Activity</CardTitle>
+                <CardTitle className="text-white">Recent Activity</CardTitle>
                 <CardDescription>Latest system events</CardDescription>
               </CardHeader>
               <CardContent>
@@ -285,7 +284,7 @@ const Analytics = () => {
                         event.type === 'energy' ? 'bg-cosmic-amber' : 'bg-white/50'
                       }`} />
                       <div className="flex-1">
-                        <p className="text-sm">{event.description}</p>
+                        <p className="text-sm text-white">{event.description}</p>
                         <p className="text-xs text-white/60 mt-1">{event.time}</p>
                       </div>
                     </div>

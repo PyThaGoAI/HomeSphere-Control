@@ -65,7 +65,7 @@ const AutomationLab = () => {
                   <CardHeader>
                     <div className="flex justify-between items-center">
                       <CardTitle className="text-xl text-white">{automation.name}</CardTitle>
-                      <Badge className={automation.status === 'active' ? "bg-cosmic-teal text-black" : "bg-cosmic-amber/40"}>
+                      <Badge className={automation.status === 'active' ? "bg-cosmic-teal text-white" : "bg-cosmic-amber/40"}>
                         {automation.status}
                       </Badge>
                     </div>
@@ -76,7 +76,7 @@ const AutomationLab = () => {
                       <h4 className="text-sm text-white/60 mb-2">Triggers:</h4>
                       <div className="flex flex-wrap gap-2">
                         {automation.triggers.map((trigger, i) => (
-                          <span key={i} className="text-xs bg-white/10 px-2 py-1 rounded-full">{trigger}</span>
+                          <span key={i} className="text-xs bg-white/10 px-2 py-1 rounded-full text-white">{trigger}</span>
                         ))}
                       </div>
                     </div>
@@ -116,7 +116,7 @@ const AutomationLab = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <Card className="bg-cosmic-blue/30 border border-cosmic-teal/20 backdrop-blur-md hover:border-cosmic-teal/40 transition-colors cursor-pointer">
                 <CardHeader>
-                  <CardTitle>Security Monitoring</CardTitle>
+                  <CardTitle className="text-white">Security Monitoring</CardTitle>
                   <CardDescription>Automated security protocols for monitoring your home</CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -131,7 +131,7 @@ const AutomationLab = () => {
               
               <Card className="bg-cosmic-blue/30 border border-cosmic-teal/20 backdrop-blur-md hover:border-cosmic-teal/40 transition-colors cursor-pointer">
                 <CardHeader>
-                  <CardTitle>Sleep Optimization</CardTitle>
+                  <CardTitle className="text-white">Sleep Optimization</CardTitle>
                   <CardDescription>Create the perfect sleep environment automatically</CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -146,7 +146,7 @@ const AutomationLab = () => {
               
               <Card className="bg-cosmic-blue/30 border border-cosmic-teal/20 backdrop-blur-md hover:border-cosmic-teal/40 transition-colors cursor-pointer">
                 <CardHeader>
-                  <CardTitle>Vacation Mode</CardTitle>
+                  <CardTitle className="text-white">Vacation Mode</CardTitle>
                   <CardDescription>Simulate presence while you're away</CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -165,7 +165,7 @@ const AutomationLab = () => {
               <div className="lg:col-span-2">
                 <Card className="bg-cosmic-blue/30 border border-cosmic-teal/20 backdrop-blur-md">
                   <CardHeader>
-                    <CardTitle>Weekly Schedule</CardTitle>
+                    <CardTitle className="text-white">Weekly Schedule</CardTitle>
                     <CardDescription>Automation activation patterns</CardDescription>
                   </CardHeader>
                   <CardContent>
@@ -178,31 +178,31 @@ const AutomationLab = () => {
               <div>
                 <Card className="bg-cosmic-blue/30 border border-cosmic-teal/20 backdrop-blur-md">
                   <CardHeader>
-                    <CardTitle>Quick Schedule</CardTitle>
+                    <CardTitle className="text-white">Quick Schedule</CardTitle>
                     <CardDescription>Set up automation times</CardDescription>
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-4">
                       <div className="space-y-2">
                         <label className="text-sm text-white/70">Select Automation</label>
-                        <div className="p-2 border border-white/20 rounded-md text-white/90">Morning Routine</div>
+                        <div className="p-2 border border-white/20 rounded-md text-white">Morning Routine</div>
                       </div>
                       <div className="space-y-2">
                         <label className="text-sm text-white/70">Schedule Type</label>
                         <div className="flex gap-2">
-                          <Button size="sm" className="bg-cosmic-teal text-black">Daily</Button>
+                          <Button size="sm" className="bg-cosmic-teal text-white">Daily</Button>
                           <Button size="sm" variant="outline">Weekly</Button>
                           <Button size="sm" variant="outline">Custom</Button>
                         </div>
                       </div>
                       <div className="space-y-2">
                         <label className="text-sm text-white/70">Time</label>
-                        <div className="p-2 border border-white/20 rounded-md text-white/90">06:30 AM</div>
+                        <div className="p-2 border border-white/20 rounded-md text-white">06:30 AM</div>
                       </div>
                     </div>
                   </CardContent>
                   <CardFooter>
-                    <Button className="w-full bg-cosmic-teal hover:bg-cosmic-teal/80 text-black">Apply Schedule</Button>
+                    <Button className="w-full bg-cosmic-teal hover:bg-cosmic-teal/80 text-white">Apply Schedule</Button>
                   </CardFooter>
                 </Card>
               </div>
