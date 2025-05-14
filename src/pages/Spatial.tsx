@@ -24,13 +24,13 @@ const Spatial = () => {
           <div className="flex items-center gap-3">
             <div className="flex rounded-lg overflow-hidden border border-cosmic-teal/30">
               <button 
-                className={`px-4 py-2 ${viewMode === '2d' ? 'bg-cosmic-teal text-black' : 'bg-cosmic-blue/30 text-white/70'}`}
+                className={`px-4 py-2 ${viewMode === '2d' ? 'bg-cosmic-teal text-white' : 'bg-cosmic-blue/30 text-white/70'}`}
                 onClick={() => setViewMode('2d')}
               >
                 2D View
               </button>
               <button 
-                className={`px-4 py-2 ${viewMode === '3d' ? 'bg-cosmic-teal text-black' : 'bg-cosmic-blue/30 text-white/70'}`}
+                className={`px-4 py-2 ${viewMode === '3d' ? 'bg-cosmic-teal text-white' : 'bg-cosmic-blue/30 text-white/70'}`}
                 onClick={() => setViewMode('3d')}
               >
                 3D View
@@ -48,7 +48,7 @@ const Spatial = () => {
               </SelectContent>
             </Select>
             
-            <Button className="bg-cosmic-teal hover:bg-cosmic-teal/80 text-black">
+            <Button className="bg-cosmic-teal hover:bg-cosmic-teal/80 text-white">
               <Plus size={16} className="mr-2" /> Add Device
             </Button>
           </div>
@@ -61,7 +61,7 @@ const Spatial = () => {
                 <div className="flex justify-between items-center">
                   <CardTitle>{viewMode === '2d' ? '2D Floor Plan' : '3D Spatial View'}</CardTitle>
                   <div className="flex gap-2">
-                    <Badge className="bg-cosmic-teal text-black">Main Floor</Badge>
+                    <Badge className="bg-cosmic-teal text-white">Main Floor</Badge>
                     <Button variant="ghost" size="icon" className="h-8 w-8">
                       <Map size={16} />
                     </Button>
@@ -88,19 +88,19 @@ const Spatial = () => {
                 </div>
                 
                 <div className="absolute bottom-4 right-4 flex gap-2">
-                  <Button variant="outline" size="sm" className="bg-black/30 border-white/20 backdrop-blur-md">
+                  <Button variant="outline" size="sm" className="bg-black/30 border-white/20 backdrop-blur-md text-white">
                     Zoom In
                   </Button>
-                  <Button variant="outline" size="sm" className="bg-black/30 border-white/20 backdrop-blur-md">
+                  <Button variant="outline" size="sm" className="bg-black/30 border-white/20 backdrop-blur-md text-white">
                     Zoom Out
                   </Button>
-                  <Button variant="outline" size="sm" className="bg-black/30 border-white/20 backdrop-blur-md">
+                  <Button variant="outline" size="sm" className="bg-black/30 border-white/20 backdrop-blur-md text-white">
                     Reset View
                   </Button>
                 </div>
                 
                 <div className="absolute bottom-4 left-4 p-3 bg-black/30 border border-white/20 rounded-lg backdrop-blur-md">
-                  <div className="flex flex-wrap gap-3 text-xs">
+                  <div className="flex flex-wrap gap-3 text-xs text-white">
                     <div className="flex items-center gap-1">
                       <div className="w-3 h-3 rounded-full bg-cosmic-teal"></div>
                       <span>Active Devices</span>
@@ -169,7 +169,7 @@ const Spatial = () => {
                             device.status === 'alert' ? 'bg-cosmic-amber' : 'bg-white/30'
                           }`}></div>
                           <div>
-                            <p className="font-medium">{device.name}</p>
+                            <p className="font-medium text-white">{device.name}</p>
                             <p className="text-xs text-white/60">{device.location}</p>
                           </div>
                         </div>
@@ -186,7 +186,7 @@ const Spatial = () => {
                 <div className="space-y-2">
                   <Card className="bg-cosmic-blue/20 border border-cosmic-teal/30">
                     <CardContent className="p-4">
-                      <h3 className="font-medium">Living Area</h3>
+                      <h3 className="font-medium text-white">Living Area</h3>
                       <p className="text-xs text-white/60 mb-2">6 devices • 450 sq ft</p>
                       <div className="flex flex-wrap gap-1 text-xs">
                         <Badge className="bg-cosmic-teal/10 text-cosmic-teal">Entertainment</Badge>
@@ -198,7 +198,7 @@ const Spatial = () => {
                   
                   <Card className="bg-cosmic-blue/20 border border-white/10">
                     <CardContent className="p-4">
-                      <h3 className="font-medium">Kitchen</h3>
+                      <h3 className="font-medium text-white">Kitchen</h3>
                       <p className="text-xs text-white/60 mb-2">4 devices • 280 sq ft</p>
                       <div className="flex flex-wrap gap-1 text-xs">
                         <Badge className="bg-cosmic-teal/10 text-cosmic-teal">Lighting</Badge>
@@ -209,7 +209,7 @@ const Spatial = () => {
                   
                   <Card className="bg-cosmic-blue/20 border border-white/10">
                     <CardContent className="p-4">
-                      <h3 className="font-medium">Master Bedroom</h3>
+                      <h3 className="font-medium text-white">Master Bedroom</h3>
                       <p className="text-xs text-white/60 mb-2">5 devices • 320 sq ft</p>
                       <div className="flex flex-wrap gap-1 text-xs">
                         <Badge className="bg-cosmic-teal/10 text-cosmic-teal">Lighting</Badge>
@@ -221,7 +221,7 @@ const Spatial = () => {
                   
                   <Card className="bg-cosmic-blue/20 border border-white/10">
                     <CardContent className="p-4">
-                      <h3 className="font-medium">Home Office</h3>
+                      <h3 className="font-medium text-white">Home Office</h3>
                       <p className="text-xs text-white/60 mb-2">3 devices • 180 sq ft</p>
                       <div className="flex flex-wrap gap-1 text-xs">
                         <Badge className="bg-cosmic-teal/10 text-cosmic-teal">Productivity</Badge>
@@ -247,7 +247,7 @@ const Spatial = () => {
             <CardContent className="p-4 flex justify-between">
               <div>
                 <p className="text-sm text-white/60">Total Mapped Area</p>
-                <p className="text-2xl font-medium">2,450 sq ft</p>
+                <p className="text-2xl font-medium text-white">2,450 sq ft</p>
                 <p className="text-xs text-cosmic-teal">3 floors • 12 rooms</p>
               </div>
               <div className="w-12 h-12 bg-cosmic-teal/10 rounded-full flex items-center justify-center">
@@ -260,7 +260,7 @@ const Spatial = () => {
             <CardContent className="p-4 flex justify-between">
               <div>
                 <p className="text-sm text-white/60">Mapped Devices</p>
-                <p className="text-2xl font-medium">37 / 42</p>
+                <p className="text-2xl font-medium text-white">37 / 42</p>
                 <p className="text-xs text-cosmic-teal">5 unmapped devices</p>
               </div>
               <div className="w-12 h-12 bg-cosmic-teal/10 rounded-full flex items-center justify-center">
@@ -273,7 +273,7 @@ const Spatial = () => {
             <CardContent className="p-4 flex justify-between">
               <div>
                 <p className="text-sm text-white/60">Coverage Quality</p>
-                <p className="text-2xl font-medium">92%</p>
+                <p className="text-2xl font-medium text-white">92%</p>
                 <p className="text-xs text-cosmic-teal">Excellent coverage</p>
               </div>
               <div className="w-12 h-12 bg-cosmic-teal/10 rounded-full flex items-center justify-center">
@@ -286,7 +286,7 @@ const Spatial = () => {
             <CardContent className="p-4 flex justify-between">
               <div>
                 <p className="text-sm text-white/60">3D Model Status</p>
-                <p className="text-2xl font-medium">Up to Date</p>
+                <p className="text-2xl font-medium text-white">Up to Date</p>
                 <p className="text-xs text-cosmic-teal">Last updated 2 days ago</p>
               </div>
               <div className="w-12 h-12 bg-cosmic-teal/10 rounded-full flex items-center justify-center">
