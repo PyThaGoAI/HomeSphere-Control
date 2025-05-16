@@ -148,7 +148,8 @@ const Ecosystem = () => {
 
           <Card className="border border-dashed border-white/20 bg-white/5 flex flex-col items-center justify-center p-4 sm:p-6 text-center hover:border-cosmic-teal/30 transition-colors cursor-pointer">
             <div className="w-10 sm:w-12 h-10 sm:h-12 rounded-full bg-cosmic-teal/10 flex items-center justify-center mb-3">
-              <Plus size={20} sm:size={24} className="text-cosmic-teal" />
+              <Plus size={20} className="text-cosmic-teal sm:hidden" />
+              <Plus size={24} className="text-cosmic-teal hidden sm:block" />
             </div>
             <h3 className="text-base sm:text-lg font-medium text-white">Add New Device</h3>
             <p className="text-xs sm:text-sm text-white/60 mt-1">Connect a new smart device to your ecosystem</p>
@@ -171,7 +172,8 @@ const Ecosystem = () => {
               <div key={i} className="flex items-center justify-between p-2 sm:p-3 border border-white/10 rounded-lg bg-cosmic-blue/20 backdrop-blur-md">
                 <div className="flex items-center gap-2 sm:gap-3">
                   <div className="w-6 sm:w-8 h-6 sm:h-8 rounded-md bg-white/10 flex items-center justify-center">
-                    <Info size={14} sm:size={16} className="text-white" />
+                    <Info size={14} className="text-white sm:hidden" />
+                    <Info size={16} className="text-white hidden sm:block" />
                   </div>
                   <span className="text-xs sm:text-sm text-white">{integration.name}</span>
                 </div>
