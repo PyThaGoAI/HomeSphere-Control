@@ -4,19 +4,22 @@ import Header from './Header';
 import Sidebar from './Sidebar';
 import Footer from './Footer';
 import { SidebarProvider } from '@/components/ui/sidebar';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 interface DashboardLayoutProps {
   children: ReactNode;
 }
 
 const DashboardLayout = ({ children }: DashboardLayoutProps) => {
+  const isMobile = useIsMobile();
+
   return (
     <SidebarProvider>
-      <div className="min-h-screen flex flex-col w-full">
+      <div className="min-h-screen flex flex-col w-full overflow-x-hidden">
         <Header />
-        <div className="flex flex-1 overflow-hidden">
+        <div className="flex flex-1 overflow-hidden w-full">
           <Sidebar />
-          <main className="flex-1 overflow-y-auto overflow-x-hidden p-4 sm:p-6 flex flex-col w-full">
+          <main className="flex-1 overflow-y-auto overflow-x-hidden p-3 sm:p-4 md:p-6 flex flex-col w-full max-w-full">
             <div className="stars-container absolute inset-0 overflow-hidden z-0 pointer-events-none">
               {Array.from({ length: 100 }).map((_, i) => (
                 <div
