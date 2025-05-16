@@ -65,7 +65,7 @@ const Index = () => {
 
   return (
     <DashboardLayout>
-      <div className="relative max-w-[1800px] mx-auto">
+      <div className="relative w-full">
         {/* Enhanced decorative background elements */}
         <div className="absolute top-10 right-10 w-64 h-64 bg-cosmic-teal/5 rounded-full blur-3xl -z-10 animate-pulse-glow"></div>
         <div className="absolute bottom-10 left-10 w-96 h-96 bg-cosmic-amber/5 rounded-full blur-3xl -z-10 animate-pulse-amber"></div>

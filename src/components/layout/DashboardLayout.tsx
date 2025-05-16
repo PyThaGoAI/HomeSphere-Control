@@ -21,7 +21,7 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
           <Header />
           <div className="flex flex-1 overflow-hidden w-full">
             <Sidebar />
-            <main className="flex-1 overflow-y-auto overflow-x-hidden p-3 sm:p-4 md:p-6 lg:p-8 flex flex-col w-full max-w-full">
+            <main className="flex-1 overflow-y-auto overflow-x-hidden p-3 sm:p-4 md:p-6 flex flex-col w-full max-w-full">
               <div className="stars-container absolute inset-0 overflow-hidden z-0 pointer-events-none">
                 {Array.from({ length: 150 }).map((_, i) => (
                   <div
@@ -49,7 +49,7 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
                   />
                 ))}
               </div>
-              <div className="relative z-10 flex-1 max-w-full w-full">
+              <div className="relative z-10 flex-1 w-full">
                 {children}
               </div>
               <Footer />
