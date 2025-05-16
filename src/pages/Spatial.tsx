@@ -21,7 +21,7 @@ const Spatial = () => {
             <p className="text-white">Interactive 3D visualization of your smart home</p>
           </div>
           
-          <div className="flex items-center gap-3">
+          <div className="flex flex-wrap items-center gap-3">
             <div className="flex rounded-lg overflow-hidden border border-cosmic-teal/30">
               <button 
                 className={`px-4 py-2 text-white ${viewMode === '2d' ? 'bg-cosmic-teal' : 'bg-cosmic-blue/30'}`}
@@ -71,11 +71,11 @@ const Spatial = () => {
               <CardContent className="p-0 relative">
                 <div className="w-full h-[600px] bg-cosmic-blue/40 relative">
                   {/* This would be the actual floor plan / 3D view in a real implementation */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center text-white">
-                      <Map size={64} className="mx-auto mb-4 opacity-30 text-white" />
-                      <p>Interactive {viewMode === '2d' ? '2D' : '3D'} floor plan would render here</p>
-                      <p className="text-sm mt-2">Complete with device positioning and status indicators</p>
+                  <div className="absolute inset-0 flex items-center justify-center w-full h-full p-4 overflow-hidden text-center">
+                    <div className="w-full max-w-md mx-auto">
+                      <Map size={48} className="mx-auto mb-2 md:mb-4 opacity-30 text-white" />
+                      <p className="text-sm md:text-base text-white">Interactive {viewMode === '2d' ? '2D' : '3D'} floor plan would render here</p>
+                      <p className="text-xs mt-1 md:mt-2 text-white/70">Complete with device positioning and status indicators</p>
                     </div>
                   </div>
                   
@@ -87,7 +87,7 @@ const Spatial = () => {
                   <div className="absolute top-[60%] left-[20%] w-4 h-4 teal-glow rounded-full bg-cosmic-teal" title="Window Sensor"></div>
                 </div>
                 
-                <div className="absolute bottom-4 right-4 flex gap-2">
+                <div className="absolute bottom-4 right-4 flex flex-wrap gap-2">
                   <Button variant="outline" size="sm" className="bg-black/30 border-white/20 backdrop-blur-md text-white">
                     Zoom In
                   </Button>
@@ -99,22 +99,22 @@ const Spatial = () => {
                   </Button>
                 </div>
                 
-                <div className="absolute bottom-4 left-4 p-3 bg-black/30 border border-white/20 rounded-lg backdrop-blur-md">
-                  <div className="flex flex-wrap gap-3 text-xs text-white">
+                <div className="absolute bottom-4 left-4 p-2 sm:p-3 bg-black/30 border border-white/20 rounded-lg backdrop-blur-md">
+                  <div className="flex flex-wrap gap-2 sm:gap-3 text-xs text-white">
                     <div className="flex items-center gap-1">
-                      <div className="w-3 h-3 rounded-full bg-cosmic-teal"></div>
+                      <div className="w-2 sm:w-3 h-2 sm:h-3 rounded-full bg-cosmic-teal"></div>
                       <span>Active Devices</span>
                     </div>
                     <div className="flex items-center gap-1">
-                      <div className="w-3 h-3 rounded-full bg-cosmic-amber"></div>
+                      <div className="w-2 sm:w-3 h-2 sm:h-3 rounded-full bg-cosmic-amber"></div>
                       <span>Alerts</span>
                     </div>
                     <div className="flex items-center gap-1">
-                      <div className="w-3 h-3 rounded-full bg-white/30"></div>
+                      <div className="w-2 sm:w-3 h-2 sm:h-3 rounded-full bg-white/30"></div>
                       <span>Inactive</span>
                     </div>
                     <div className="flex items-center gap-1">
-                      <div className="w-3 h-3 rounded-full bg-cosmic-teal animate-pulse"></div>
+                      <div className="w-2 sm:w-3 h-2 sm:h-3 rounded-full bg-cosmic-teal animate-pulse"></div>
                       <span>In Use</span>
                     </div>
                   </div>
