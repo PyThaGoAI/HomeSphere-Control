@@ -34,6 +34,9 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     document.documentElement.style.setProperty('--theme-color-50', `${theme.color}80`); // 50% opacity
     document.documentElement.style.setProperty('--theme-color-20', `${theme.color}33`); // 20% opacity
     document.documentElement.style.setProperty('--theme-color-10', `${theme.color}1A`); // 10% opacity
+    
+    // Log to verify the theme change is happening
+    console.log("Theme changed to:", theme.name, theme.color);
   };
 
   // Set the theme color on initial render

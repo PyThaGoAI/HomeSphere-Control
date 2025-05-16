@@ -1,4 +1,3 @@
-
 import DashboardLayout from '@/components/layout/DashboardLayout';
 import { useState } from 'react';
 import { useTheme } from '@/contexts/ThemeContext';
@@ -71,6 +70,7 @@ const Settings = () => {
   ];
 
   const handleThemeChange = (theme) => {
+    console.log("Setting theme to:", theme.name, theme.color);
     setTheme(theme);
   };
 
@@ -1039,7 +1039,6 @@ const Settings = () => {
                         Change
                       </button>
                     </div>
-                    
                     <div className="pt-2">
                       <label className="block text-sm mb-1">Advanced Wi-Fi Settings</label>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
