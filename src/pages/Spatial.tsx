@@ -18,19 +18,19 @@ const Spatial = () => {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
           <div>
             <h1 className="text-3xl font-orbitron text-gradient-teal">Spatial Map</h1>
-            <p className="text-white/70">Interactive 3D visualization of your smart home</p>
+            <p className="text-white">Interactive 3D visualization of your smart home</p>
           </div>
           
           <div className="flex items-center gap-3">
             <div className="flex rounded-lg overflow-hidden border border-cosmic-teal/30">
               <button 
-                className={`px-4 py-2 ${viewMode === '2d' ? 'bg-cosmic-teal text-white' : 'bg-cosmic-blue/30 text-white/70'}`}
+                className={`px-4 py-2 text-white ${viewMode === '2d' ? 'bg-cosmic-teal' : 'bg-cosmic-blue/30'}`}
                 onClick={() => setViewMode('2d')}
               >
                 2D View
               </button>
               <button 
-                className={`px-4 py-2 ${viewMode === '3d' ? 'bg-cosmic-teal text-white' : 'bg-cosmic-blue/30 text-white/70'}`}
+                className={`px-4 py-2 text-white ${viewMode === '3d' ? 'bg-cosmic-teal' : 'bg-cosmic-blue/30'}`}
                 onClick={() => setViewMode('3d')}
               >
                 3D View
@@ -38,18 +38,18 @@ const Spatial = () => {
             </div>
             
             <Select value={selectedFloor} onValueChange={setSelectedFloor}>
-              <SelectTrigger className="w-[150px] bg-cosmic-blue/30 border-cosmic-teal/20">
+              <SelectTrigger className="w-[150px] bg-cosmic-blue/30 border-cosmic-teal/20 text-white">
                 <SelectValue placeholder="Select Floor" />
               </SelectTrigger>
               <SelectContent className="bg-cosmic-blue border border-cosmic-teal/20">
-                <SelectItem value="main">Main Floor</SelectItem>
-                <SelectItem value="upper">Upper Floor</SelectItem>
-                <SelectItem value="basement">Basement</SelectItem>
+                <SelectItem value="main" className="text-white">Main Floor</SelectItem>
+                <SelectItem value="upper" className="text-white">Upper Floor</SelectItem>
+                <SelectItem value="basement" className="text-white">Basement</SelectItem>
               </SelectContent>
             </Select>
             
-            <Button className="bg-cosmic-teal hover:bg-cosmic-teal/80 text-white">
-              <Plus size={16} className="mr-2" /> Add Device
+            <Button className="bg-cosmic-teal hover:bg-cosmic-teal/80 text-black">
+              <Plus size={16} className="mr-2 text-black" /> Add Device
             </Button>
           </div>
         </div>
@@ -59,11 +59,11 @@ const Spatial = () => {
             <Card className="bg-cosmic-blue/30 border border-cosmic-teal/20 backdrop-blur-md overflow-hidden">
               <CardHeader className="border-b border-white/10">
                 <div className="flex justify-between items-center">
-                  <CardTitle>{viewMode === '2d' ? '2D Floor Plan' : '3D Spatial View'}</CardTitle>
+                  <CardTitle className="text-white">{viewMode === '2d' ? '2D Floor Plan' : '3D Spatial View'}</CardTitle>
                   <div className="flex gap-2">
                     <Badge className="bg-cosmic-teal text-white">Main Floor</Badge>
-                    <Button variant="ghost" size="icon" className="h-8 w-8">
-                      <Map size={16} />
+                    <Button variant="ghost" size="icon" className="h-8 w-8 text-white">
+                      <Map size={16} className="text-white" />
                     </Button>
                   </div>
                 </div>
@@ -72,8 +72,8 @@ const Spatial = () => {
                 <div className="w-full h-[600px] bg-cosmic-blue/40 relative">
                   {/* This would be the actual floor plan / 3D view in a real implementation */}
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center text-white/60">
-                      <Map size={64} className="mx-auto mb-4 opacity-30" />
+                    <div className="text-center text-white">
+                      <Map size={64} className="mx-auto mb-4 opacity-30 text-white" />
                       <p>Interactive {viewMode === '2d' ? '2D' : '3D'} floor plan would render here</p>
                       <p className="text-sm mt-2">Complete with device positioning and status indicators</p>
                     </div>
@@ -126,26 +126,26 @@ const Spatial = () => {
           <div className="lg:col-span-2">
             <Tabs defaultValue="devices" className="w-full">
               <TabsList className="bg-cosmic-blue/30 border border-cosmic-teal/20 w-full">
-                <TabsTrigger value="devices" className="flex-1">Devices</TabsTrigger>
-                <TabsTrigger value="zones" className="flex-1">Zones</TabsTrigger>
-                <TabsTrigger value="paths" className="flex-1">Paths</TabsTrigger>
+                <TabsTrigger value="devices" className="flex-1 text-white">Devices</TabsTrigger>
+                <TabsTrigger value="zones" className="flex-1 text-white">Zones</TabsTrigger>
+                <TabsTrigger value="paths" className="flex-1 text-white">Paths</TabsTrigger>
               </TabsList>
               
               <TabsContent value="devices" className="mt-4 space-y-4">
                 <div className="space-y-1">
-                  <p className="text-sm text-white/60 ml-1">Filter by Type</p>
+                  <p className="text-sm text-white ml-1">Filter by Type</p>
                   <div className="flex flex-wrap gap-2">
                     <Button variant="outline" size="sm" className="bg-cosmic-teal/10 border-cosmic-teal/30 text-cosmic-teal">
-                      <Lightbulb size={14} className="mr-1" /> Lighting
+                      <Lightbulb size={14} className="mr-1 text-cosmic-teal" /> Lighting
                     </Button>
-                    <Button variant="outline" size="sm" className="bg-transparent border-white/20">
-                      <Thermometer size={14} className="mr-1" /> Climate
+                    <Button variant="outline" size="sm" className="bg-transparent border-white/20 text-white">
+                      <Thermometer size={14} className="mr-1 text-white" /> Climate
                     </Button>
-                    <Button variant="outline" size="sm" className="bg-transparent border-white/20">
-                      <Lock size={14} className="mr-1" /> Security
+                    <Button variant="outline" size="sm" className="bg-transparent border-white/20 text-white">
+                      <Lock size={14} className="mr-1 text-white" /> Security
                     </Button>
-                    <Button variant="outline" size="sm" className="bg-transparent border-white/20">
-                      <Wifi size={14} className="mr-1" /> Network
+                    <Button variant="outline" size="sm" className="bg-transparent border-white/20 text-white">
+                      <Wifi size={14} className="mr-1 text-white" /> Network
                     </Button>
                   </div>
                 </div>
@@ -233,7 +233,7 @@ const Spatial = () => {
               </TabsContent>
               
               <TabsContent value="paths" className="mt-4 h-[500px] flex items-center justify-center p-6">
-                <div className="text-center text-white/60">
+                <div className="text-center text-white">
                   <p>Movement paths and activity heatmaps would display here</p>
                   <p className="text-sm mt-2">Showing how residents move through the home</p>
                 </div>
@@ -246,7 +246,7 @@ const Spatial = () => {
           <Card className="bg-cosmic-blue/30 border border-cosmic-teal/20 backdrop-blur-md">
             <CardContent className="p-4 flex justify-between">
               <div>
-                <p className="text-sm text-white/60">Total Mapped Area</p>
+                <p className="text-sm text-white">Total Mapped Area</p>
                 <p className="text-2xl font-medium text-white">2,450 sq ft</p>
                 <p className="text-xs text-cosmic-teal">3 floors • 12 rooms</p>
               </div>
@@ -259,7 +259,7 @@ const Spatial = () => {
           <Card className="bg-cosmic-blue/30 border border-cosmic-teal/20 backdrop-blur-md">
             <CardContent className="p-4 flex justify-between">
               <div>
-                <p className="text-sm text-white/60">Mapped Devices</p>
+                <p className="text-sm text-white">Mapped Devices</p>
                 <p className="text-2xl font-medium text-white">37 / 42</p>
                 <p className="text-xs text-cosmic-teal">5 unmapped devices</p>
               </div>
@@ -272,7 +272,7 @@ const Spatial = () => {
           <Card className="bg-cosmic-blue/30 border border-cosmic-teal/20 backdrop-blur-md">
             <CardContent className="p-4 flex justify-between">
               <div>
-                <p className="text-sm text-white/60">Coverage Quality</p>
+                <p className="text-sm text-white">Coverage Quality</p>
                 <p className="text-2xl font-medium text-white">92%</p>
                 <p className="text-xs text-cosmic-teal">Excellent coverage</p>
               </div>
@@ -285,7 +285,7 @@ const Spatial = () => {
           <Card className="bg-cosmic-blue/30 border border-cosmic-teal/20 backdrop-blur-md">
             <CardContent className="p-4 flex justify-between">
               <div>
-                <p className="text-sm text-white/60">3D Model Status</p>
+                <p className="text-sm text-white">3D Model Status</p>
                 <p className="text-2xl font-medium text-white">Up to Date</p>
                 <p className="text-xs text-cosmic-teal">Last updated 2 days ago</p>
               </div>

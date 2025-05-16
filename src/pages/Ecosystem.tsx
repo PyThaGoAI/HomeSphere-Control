@@ -16,25 +16,25 @@ const Ecosystem = () => {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
           <div>
             <h1 className="text-3xl font-orbitron text-gradient-teal">Smart Ecosystem</h1>
-            <p className="text-white/70">Manage your connected devices and integrations</p>
+            <p className="text-white">Manage your connected devices and integrations</p>
           </div>
           <div className="flex items-center gap-3">
             <div className="flex rounded-lg overflow-hidden border border-cosmic-teal/30">
               <button 
-                className={`px-4 py-2 ${viewMode === 'grid' ? 'bg-cosmic-teal text-black' : 'bg-cosmic-blue/30 text-white/70'}`}
+                className={`px-4 py-2 text-white ${viewMode === 'grid' ? 'bg-cosmic-teal' : 'bg-cosmic-blue/30'}`}
                 onClick={() => setViewMode('grid')}
               >
                 Devices
               </button>
               <button 
-                className={`px-4 py-2 ${viewMode === 'connections' ? 'bg-cosmic-teal text-black' : 'bg-cosmic-blue/30 text-white/70'}`}
+                className={`px-4 py-2 text-white ${viewMode === 'connections' ? 'bg-cosmic-teal' : 'bg-cosmic-blue/30'}`}
                 onClick={() => setViewMode('connections')}
               >
                 Connections
               </button>
             </div>
             <Button className="bg-cosmic-teal hover:bg-cosmic-teal/80 text-black font-medium">
-              <Plus size={18} className="mr-2" /> Add Device
+              <Plus size={18} className="mr-2 text-black" /> Add Device
             </Button>
           </div>
         </div>
@@ -160,19 +160,19 @@ const Ecosystem = () => {
               { name: "Weather Services", status: "Connected", icon: <Check size={16} className="text-cosmic-teal" /> },
               { name: "Security API", status: "Connected", icon: <Check size={16} className="text-cosmic-teal" /> },
               { name: "Smart Lighting API", status: "Issue", icon: <AlertCircle size={16} className="text-cosmic-amber" /> },
-              { name: "Energy Provider", status: "Not Connected", icon: <X size={16} className="text-white/40" /> },
+              { name: "Energy Provider", status: "Not Connected", icon: <X size={16} className="text-white" /> },
               { name: "Media Services", status: "Connected", icon: <Check size={16} className="text-cosmic-teal" /> },
               { name: "Calendar Integration", status: "Connected", icon: <Check size={16} className="text-cosmic-teal" /> },
             ].map((integration, i) => (
               <div key={i} className="flex items-center justify-between p-3 border border-white/10 rounded-lg bg-cosmic-blue/20 backdrop-blur-md">
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-8 rounded-md bg-white/10 flex items-center justify-center">
-                    <Info size={16} className="text-white/70" />
+                    <Info size={16} className="text-white" />
                   </div>
                   <span className="text-white">{integration.name}</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-xs text-white/60">{integration.status}</span>
+                  <span className="text-xs text-white">{integration.status}</span>
                   <div className="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center">
                     {integration.icon}
                   </div>
