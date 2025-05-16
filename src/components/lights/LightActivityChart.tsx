@@ -1,7 +1,6 @@
-
 import React, { useState, useEffect } from 'react';
 import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid } from 'recharts';
-import { ChartContainer, ChartTooltipContent, ChartConfig } from '@/components/ui/chart';
+import { ChartContainer, ChartTooltipContent, ChartConfig, ChartTooltip } from '@/components/ui/chart';
 import { TrendingUp } from 'lucide-react';
 
 // Mock data generation for light usage over the past 24 hours
@@ -126,4 +125,3 @@ const LightActivityChart: React.FC = () => {
 };
 
 export default LightActivityChart;
-
