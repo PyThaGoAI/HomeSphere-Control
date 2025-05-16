@@ -1,8 +1,9 @@
-
 import DashboardLayout from '@/components/layout/DashboardLayout';
 import RoomLightControl from '@/components/lights/RoomLightControl';
 import LightingScene from '@/components/lights/LightingScene';
 import { useLights } from '@/hooks/use-lights';
+import LightActivityChart from '@/components/lights/LightActivityChart';
+import { Zap } from 'lucide-react';
 
 const Lights = () => {
   const { 
@@ -61,13 +62,16 @@ const Lights = () => {
           </div>
         </div>
         
-        <div className="p-3 sm:p-6 bg-cosmic-blue/30 backdrop-blur-md border border-cosmic-teal/20 rounded-xl">
-          <h2 className="font-orbitron text-base sm:text-lg mb-3 sm:mb-4">Light Activity</h2>
-          <div className="h-32 sm:h-48 bg-cosmic-blue/20 rounded-lg flex items-center justify-center">
-            <span className="text-sm text-white/70">Light usage chart will appear here</span>
+        <div className="p-3 sm:p-6 bg-[#1A1F2C] backdrop-blur-lg border border-[#8B5CF6]/50 rounded-xl shadow-xl shadow-[#8B5CF6]/10">
+          <div className="flex items-center mb-3 sm:mb-4">
+            <Zap size={20} className="text-[#8B5CF6] mr-2" />
+            <h2 className="font-orbitron text-base sm:text-lg text-white">Light Activity <span className="text-xs font-normal text-[#8B5CF6] opacity-80 ml-1">(Premium)</span></h2>
+          </div>
+          <div className="h-40 sm:h-56 rounded-lg">
+            <LightActivityChart />
           </div>
           <div className="mt-3 sm:mt-4 text-xs sm:text-sm text-white/70">
-            Usage today: {usage} kWh • Most active: {mostActive}
+            Utilizare astăzi: {usage} kWh • Cea mai activă: {mostActive}
           </div>
         </div>
       </div>
