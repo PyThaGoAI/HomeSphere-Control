@@ -62,7 +62,7 @@ const Lights = () => {
           </div>
         </div>
         
-        <div className="p-3 sm:p-6 bg-[#1A1F2C] backdrop-blur-lg border border-[#8B5CF6]/50 rounded-xl shadow-xl shadow-[#8B5CF6]/10">
+        <div className="p-3 sm:p-6 bg-cosmic-blue/30 backdrop-blur-lg border border-[#8B5CF6]/50 rounded-xl shadow-xl shadow-[#8B5CF6]/10">
           <div className="flex items-center mb-3 sm:mb-4">
             <Zap size={20} className="text-[#8B5CF6] mr-2" />
             <h2 className="font-orbitron text-base sm:text-lg text-white">Light Activity <span className="text-xs font-normal text-[#8B5CF6] opacity-80 ml-1">(Premium)</span></h2>
