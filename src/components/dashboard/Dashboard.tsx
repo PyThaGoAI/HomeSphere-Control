@@ -12,15 +12,13 @@ import WeatherWidget from './WeatherWidget';
 const Dashboard = () => {
   return (
     <div className="space-y-10 w-full mx-auto">
-      {/* Header section with home status orb positioned on the right */}
-      <div className="flex flex-row justify-between items-center mb-10">
-        <div className="flex-1">
+      {/* Home Status Section with enhanced layout */}
+      <div className="flex flex-col items-center justify-center mb-10 relative">
+        <div className="absolute w-64 h-64 bg-cosmic-teal/5 rounded-full blur-3xl -z-10"></div>
+        <HomeStatusOrb size="lg" />
+        <div className="mt-4 text-center">
           <h2 className="font-orbitron text-2xl bg-gradient-to-r from-white via-cosmic-teal to-white bg-clip-text text-transparent">Comfort Level</h2>
           <p className="text-white/70">All systems operational</p>
-        </div>
-        <div className="relative">
-          <div className="absolute w-64 h-64 bg-cosmic-teal/5 rounded-full blur-3xl -z-10"></div>
-          <HomeStatusOrb size="md" />
         </div>
       </div>
       
