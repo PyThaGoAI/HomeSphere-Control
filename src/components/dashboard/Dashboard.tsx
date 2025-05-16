@@ -12,30 +12,13 @@ import WeatherWidget from './WeatherWidget';
 const Dashboard = () => {
   return (
     <div className="space-y-10 w-full mx-auto">
-      {/* Home Status Section with header layout */}
-      <div className="flex items-center justify-between mb-16 relative">
-        {/* Welcome section on the left */}
-        <div className="max-w-2xl">
-          <div className="flex items-center mb-2">
-            <div className="text-lg font-orbitron bg-gradient-to-r from-cosmic-teal via-white to-cosmic-amber bg-clip-text text-transparent tracking-wider">
-              ULTRA PREMIUM EXPERIENCE
-            </div>
-          </div>
-          <h1 className="text-4xl md:text-6xl font-orbitron mb-4 tracking-tight leading-tight">
-            Welcome to <span className="bg-gradient-to-r from-cosmic-teal to-cosmic-amber bg-clip-text text-transparent">HomeSphere</span>
-          </h1>
-          <p className="text-white/70 max-w-2xl text-lg leading-relaxed font-exo">
-            Your entire smart home ecosystem is optimized for maximum efficiency and luxury. All systems are operational and ready for your commands.
-          </p>
-        </div>
-
-        {/* Status orb on the right */}
-        <div className="flex flex-col items-center">
-          <HomeStatusOrb size="lg" />
-          <div className="mt-2 text-center">
-            <h2 className="font-orbitron text-2xl bg-gradient-to-r from-white via-cosmic-teal to-white bg-clip-text text-transparent">Comfort Level</h2>
-            <p className="text-white/70">All systems operational</p>
-          </div>
+      {/* Home Status Section with enhanced layout */}
+      <div className="flex flex-col items-center justify-center mb-10 relative">
+        <div className="absolute w-64 h-64 bg-cosmic-teal/5 rounded-full blur-3xl -z-10"></div>
+        <HomeStatusOrb size="lg" />
+        <div className="mt-4 text-center">
+          <h2 className="font-orbitron text-2xl bg-gradient-to-r from-white via-cosmic-teal to-white bg-clip-text text-transparent">Comfort Level</h2>
+          <p className="text-white/70">All systems operational</p>
         </div>
       </div>
       
