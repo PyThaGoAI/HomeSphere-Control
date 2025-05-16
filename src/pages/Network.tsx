@@ -30,8 +30,8 @@ const Network = () => {
               disabled={scanningNetwork}
               onClick={startNetworkScan}
             >
-              <RefreshCw size={16} className={`mr-2 text-white ${scanningNetwork ? 'animate-spin' : ''}`} />
-              <span className="text-white">{scanningNetwork ? 'Scanning...' : 'Scan Network'}</span>
+              <RefreshCw size={16} className={`mr-2 text-cosmic-teal ${scanningNetwork ? 'animate-spin' : ''}`} />
+              <span className="text-black">{scanningNetwork ? 'Scanning...' : 'Scan Network'}</span>
             </Button>
             <Button className="bg-cosmic-teal hover:bg-cosmic-teal/80">
               <span className="text-black">Network Health Report</span>
