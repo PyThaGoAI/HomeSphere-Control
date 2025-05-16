@@ -190,7 +190,7 @@ const AutomationLab = () => {
                       <div className="space-y-2">
                         <label className="text-sm text-white">Schedule Type</label>
                         <div className="flex gap-2">
-                          <Button size="sm" className="bg-cosmic-teal text-white">Daily</Button>
+                          <Button size="sm" className="bg-cosmic-teal text-black">Daily</Button>
                           <Button size="sm" variant="outline" className="text-white">Weekly</Button>
                           <Button size="sm" variant="outline" className="text-white">Custom</Button>
                         </div>
