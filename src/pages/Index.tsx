@@ -2,7 +2,7 @@ import DashboardLayout from '@/components/layout/DashboardLayout';
 import Dashboard from '@/components/dashboard/Dashboard';
 import { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { ChevronRight, Star, Sparkles, Diamond, Crown, ExternalLink, Zap, Activity, Brain, Leaf, Shield, Clock, ChartLineUp, Home, Info } from 'lucide-react';
+import { ChevronRight, Star, Sparkles, Diamond, Crown, ExternalLink, Zap, Activity, Brain, Leaf, Shield, Clock, ChartLine, Home, Info } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 
@@ -186,7 +186,7 @@ const Index = () => {
         {/* Redesigned User Statistics & Insights */}
         <div className="mt-20 mb-16">
           <div className="flex items-center mb-8">
-            <ChartLineUp className="text-cosmic-amber mr-3" size={28} />
+            <ChartLine className="text-cosmic-amber mr-3" size={28} />
             <h2 className="text-3xl font-orbitron leading-none tracking-wide">Your Smart Home Insights</h2>
           </div>
           
