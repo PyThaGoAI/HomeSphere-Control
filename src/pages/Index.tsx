@@ -5,12 +5,38 @@ import { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { ChevronRight, Star, Sparkles, Diamond, Crown } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { cn } from '@/lib/utils';
 
 const Index = () => {
   // Add page title
   useEffect(() => {
     document.title = "HomeSphere - Smart Home Control Dashboard";
   }, []);
+
+  // Premium features with proper Tailwind classes
+  const premiumFeatures = [
+    { 
+      title: "Advanced AI Control", 
+      description: "Full voice control through every room with custom routines and advanced learning capabilities.",
+      linkTo: "/assistant",
+      bgClass: "bg-gradient-to-br from-cosmic-teal/20 to-cosmic-teal/5",
+      hoverGlowClass: "hover:shadow-cosmic-teal/20"
+    },
+    { 
+      title: "Energy Optimization", 
+      description: "Save up to 35% on utility costs with intelligent scheduling and consumption analysis.",
+      linkTo: "/energy",
+      bgClass: "bg-gradient-to-br from-cosmic-amber/20 to-cosmic-amber/5",
+      hoverGlowClass: "hover:shadow-cosmic-amber/20"
+    },
+    { 
+      title: "Security Shield", 
+      description: "Multi-layered protection system with facial recognition and behavior analysis.",
+      linkTo: "/security",
+      bgClass: "bg-gradient-to-br from-purple-500/20 to-purple-500/5",
+      hoverGlowClass: "hover:shadow-purple-500/20"
+    }
+  ];
 
   return (
     <DashboardLayout>
@@ -71,34 +97,15 @@ const Index = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              { 
-                title: "Advanced AI Control", 
-                description: "Full voice control through every room with custom routines and advanced learning capabilities.",
-                linkTo: "/assistant",
-                color: "from-cosmic-teal/20 to-cosmic-teal/5",
-                hoverGlow: "hover:shadow-cosmic-teal/20"
-              },
-              { 
-                title: "Energy Optimization", 
-                description: "Save up to 35% on utility costs with intelligent scheduling and consumption analysis.",
-                linkTo: "/energy",
-                color: "from-cosmic-amber/20 to-cosmic-amber/5",
-                hoverGlow: "hover:shadow-cosmic-amber/20"
-              },
-              { 
-                title: "Security Shield", 
-                description: "Multi-layered protection system with facial recognition and behavior analysis.",
-                linkTo: "/security",
-                color: "from-purple-500/20 to-purple-500/5",
-                hoverGlow: "hover:shadow-purple-500/20"
-              }
-            ].map((feature, idx) => (
+            {premiumFeatures.map((feature, idx) => (
               <Link
                 to={feature.linkTo}
                 key={idx}
-                className={`module-card bg-gradient-to-br hover:scale-[1.02] transition-all duration-300 shadow-lg hover:shadow-xl ${feature.hoverGlow}`}
-                style={{ backgroundImage: `linear-gradient(to bottom right, ${feature.color.split(' ')[1]}, ${feature.color.split(' ')[3]})` }}
+                className={cn(
+                  "module-card hover:scale-[1.02] transition-all duration-300 shadow-lg hover:shadow-xl", 
+                  feature.bgClass,
+                  feature.hoverGlowClass
+                )}
               >
                 <h3 className="text-xl font-orbitron mb-3 text-white">{feature.title}</h3>
                 <p className="text-white/70 mb-6">{feature.description}</p>

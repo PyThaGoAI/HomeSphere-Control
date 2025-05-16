@@ -1,5 +1,6 @@
 
 import { Clock, Lock, Lightbulb, Thermometer } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 const activities = [
   {
@@ -8,7 +9,8 @@ const activities = [
     icon: Lock,
     message: "Front door locked",
     time: "2 minutes ago",
-    color: "cosmic-teal"
+    colorClass: "bg-cosmic-teal/20",
+    textColorClass: "text-cosmic-teal"
   },
   {
     id: 2,
@@ -16,7 +18,8 @@ const activities = [
     icon: Lightbulb,
     message: "Living room lights turned on",
     time: "15 minutes ago",
-    color: "cosmic-amber"
+    colorClass: "bg-cosmic-amber/20",
+    textColorClass: "text-cosmic-amber"
   },
   {
     id: 3,
@@ -24,7 +27,8 @@ const activities = [
     icon: Thermometer,
     message: "Temperature set to 22°C",
     time: "32 minutes ago",
-    color: "cosmic-teal"
+    colorClass: "bg-cosmic-teal/20",
+    textColorClass: "text-cosmic-teal"
   },
   {
     id: 4,
@@ -32,7 +36,8 @@ const activities = [
     icon: Lock,
     message: "Garage door opened",
     time: "1 hour ago",
-    color: "cosmic-amber"
+    colorClass: "bg-cosmic-amber/20",
+    textColorClass: "text-cosmic-amber"
   },
 ];
 
@@ -50,8 +55,8 @@ const RecentActivity = () => {
             key={activity.id} 
             className="flex items-center p-3 bg-cosmic-blue/60 rounded-lg border border-white/5 hover:border-white/10 transition-all"
           >
-            <div className={`p-2 rounded-full bg-${activity.color}/20 mr-3`}>
-              <activity.icon size={16} className={`text-${activity.color}`} />
+            <div className={cn("p-2 rounded-full mr-3", activity.colorClass)}>
+              <activity.icon size={16} className={activity.textColorClass} />
             </div>
             <div className="flex-1">
               <p className="text-sm">{activity.message}</p>
