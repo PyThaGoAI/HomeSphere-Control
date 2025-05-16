@@ -32,7 +32,7 @@ const Network = () => {
               onClick={startNetworkScan}
             >
               <RefreshCw size={16} className={`mr-2 text-cosmic-teal ${scanningNetwork ? 'animate-spin' : ''}`} />
-              <span className="text-white">{scanningNetwork ? 'Scanning...' : 'Scan Network'}</span>
+              <span className="text-black">{scanningNetwork ? 'Scanning...' : 'Scan Network'}</span>
             </Button>
             <Button className="bg-cosmic-teal hover:bg-cosmic-teal/80">
               <span className="text-black">Network Health Report</span>
