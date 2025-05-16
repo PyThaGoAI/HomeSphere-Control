@@ -132,10 +132,10 @@ const Ecosystem = () => {
                 </div>
               </CardContent>
               <CardFooter className="border-t border-white/10 flex justify-between pt-3">
-                <Button variant="ghost" size="sm">
+                <Button variant="ghost" size="sm" className="text-cosmic-amber hover:text-cosmic-amber/80 hover:bg-cosmic-amber/10">
                   Details
                 </Button>
-                <Button variant="ghost" size="sm">
+                <Button variant="ghost" size="sm" className="text-cosmic-teal hover:text-cosmic-teal/80 hover:bg-cosmic-teal/10">
                   Configure
                 </Button>
               </CardFooter>
