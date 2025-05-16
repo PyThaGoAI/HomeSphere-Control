@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import DashboardLayout from '@/components/layout/DashboardLayout';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
@@ -257,7 +258,7 @@ const Network = () => {
               </CardContent>
               <CardFooter className="border-t border-white/10 flex justify-center pt-4">
                 <Button variant="outline" className="border-cosmic-teal/20 bg-cosmic-blue/40">
-                  <span className="text-white">View All 24 Devices</span>
+                  <span className="text-black">View All 24 Devices</span>
                 </Button>
               </CardFooter>
             </Card>
@@ -397,7 +398,7 @@ const Network = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
               <Card className="bg-cosmic-blue/30 backdrop-blur-md border border-cosmic-teal/20">
                 <CardHeader>
-                  <CardTitle>Network Protection</CardTitle>
+                  <CardTitle className="text-white">Network Protection</CardTitle>
                   <CardDescription>Security features and status</CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -423,7 +424,7 @@ const Network = () => {
               
               <Card className="bg-cosmic-blue/30 backdrop-blur-md border border-cosmic-teal/20">
                 <CardHeader>
-                  <CardTitle>Threat Detection</CardTitle>
+                  <CardTitle className="text-white">Threat Detection</CardTitle>
                   <CardDescription>Security events and monitoring</CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -450,7 +451,9 @@ const Network = () => {
                   </div>
                 </CardContent>
                 <CardFooter className="border-t border-white/10 flex justify-end pt-4">
-                  <Button variant="outline" className="border-cosmic-teal/20 text-white">Security Report</Button>
+                  <Button variant="outline" className="border-cosmic-teal/20">
+                    <span className="text-white">Security Report</span>
+                  </Button>
                 </CardFooter>
               </Card>
             </div>
@@ -459,7 +462,7 @@ const Network = () => {
           <TabsContent value="optimization">
             <Card className="bg-cosmic-blue/30 backdrop-blur-md border border-cosmic-teal/20 mt-4">
               <CardHeader>
-                <CardTitle>Network Optimization</CardTitle>
+                <CardTitle className="text-white">Network Optimization</CardTitle>
                 <CardDescription>Settings to improve your network performance</CardDescription>
               </CardHeader>
               <CardContent>
@@ -505,7 +508,9 @@ const Network = () => {
                   </div>
                   
                   <div className="flex justify-center mt-6">
-                    <Button className="bg-cosmic-teal hover:bg-cosmic-teal/80 text-black">Apply Optimizations</Button>
+                    <Button className="bg-cosmic-teal hover:bg-cosmic-teal/80">
+                      <span className="text-black">Apply Optimizations</span>
+                    </Button>
                   </div>
                 </div>
               </CardContent>
