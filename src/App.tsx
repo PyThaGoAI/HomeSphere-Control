@@ -24,6 +24,7 @@ import Ecosystem from "./pages/Ecosystem";
 import Analytics from "./pages/Analytics";
 import Network from "./pages/Network"; 
 import Spatial from "./pages/Spatial";
+import LandingPage from "./pages/LandingPage";
 
 const queryClient = new QueryClient();
 
@@ -35,6 +36,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/landing" element={<LandingPage />} />
           <Route path="/lights" element={<Lights />} />
           <Route path="/climate" element={<Climate />} />
           <Route path="/security" element={<Security />} />
