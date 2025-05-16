@@ -1,6 +1,5 @@
-
 import { useState, useEffect, useRef } from 'react';
-import { Mic, MicOff, Waveform, Plus, Play, Save, ArrowRight } from 'lucide-react';
+import { Mic, MicOff, AudioWaveform, Plus, Play, Save, ArrowRight } from 'lucide-react';
 import DashboardLayout from '@/components/layout/DashboardLayout';
 import ModuleCard from '@/components/dashboard/ModuleCard';
 import { Button } from '@/components/ui/button';
@@ -112,7 +111,7 @@ const VoiceControl = () => {
         {/* Voice Recognition Area */}
         <ModuleCard
           title="Voice Recognition"
-          icon={<Waveform className="text-cosmic-teal" size={22} />}
+          icon={<AudioWaveform className="text-cosmic-teal" size={22} />}
           className="bg-gradient-to-br from-cosmic-blue/40 to-cosmic-blue/20"
         >
           <div className="flex flex-col items-center justify-center p-6 min-h-[300px]">
