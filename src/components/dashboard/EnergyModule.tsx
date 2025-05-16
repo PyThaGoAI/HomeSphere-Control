@@ -73,38 +73,39 @@ const EnergyModule = () => {
   return (
     <ModuleCard 
       title="Energy Insights" 
-      icon={<Zap className={isHighUsage ? "text-cosmic-amber" : "text-cosmic-teal"} />}
+      icon={<Zap className={isHighUsage ? "text-cosmic-amber" : "text-cosmic-teal"} size={22} />}
       status={isHighUsage ? 'warning' : 'optimal'}
       floating
+      className="bg-gradient-to-br from-cosmic-blue/40 to-cosmic-blue/20"
     >
-      <div className="flex justify-between items-center mb-3">
+      <div className="flex justify-between items-center mb-4 bg-cosmic-blue/30 p-3.5 rounded-lg border border-white/10">
         <div>
-          <div className="text-xs text-white/70">Current Usage</div>
-          <div className="text-2xl font-orbitron">
+          <div className="text-xs text-white/70 uppercase tracking-wide font-light">Current Usage</div>
+          <div className="text-2xl font-orbitron mt-1 bg-gradient-to-r from-white via-cosmic-teal to-white bg-clip-text text-transparent">
             {currentUsage.toFixed(1)} <span className="text-sm">kW</span>
           </div>
         </div>
         
-        <div className="text-right">
-          <div className="text-xs text-white/70">Today's Total</div>
-          <div className="text-lg font-orbitron">
+        <div className="text-right border-l border-white/10 pl-5">
+          <div className="text-xs text-white/70 uppercase tracking-wide font-light">Today's Total</div>
+          <div className="text-xl font-orbitron mt-1">
             {totalUsage.toFixed(1)} <span className="text-sm">kWh</span>
           </div>
         </div>
       </div>
       
-      <div className="h-36 mt-4">
+      <div className="h-40 mt-4">
         <ResponsiveContainer width="100%" height="100%">
           <AreaChart data={energyData} margin={{ top: 5, right: 5, left: -20, bottom: 5 }}>
             <defs>
               <linearGradient id="energyGradient" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#00E5E5" stopOpacity={0.8}/>
+                <stop offset="5%" stopColor="#00E5E5" stopOpacity={0.9}/>
                 <stop offset="95%" stopColor="#00E5E5" stopOpacity={0}/>
               </linearGradient>
             </defs>
             <XAxis 
               dataKey="time" 
-              tick={{ fontSize: 10, fill: 'rgba(255,255,255,0.7)' }} 
+              tick={{ fontSize: 10, fill: 'rgba(255,255,255,0.8)' }} 
               axisLine={{ stroke: 'rgba(255,255,255,0.2)' }}
               tickLine={false}
               interval={3}
@@ -118,20 +119,23 @@ const EnergyModule = () => {
                 backgroundColor: 'rgba(26, 42, 68, 0.9)', 
                 borderColor: 'rgba(0, 229, 229, 0.3)',
                 borderRadius: '8px',
-                fontSize: '12px'
+                fontSize: '12px',
+                padding: '10px'
               }}
-              itemStyle={{ color: '#FFFFFF' }}
-              labelStyle={{ color: 'rgba(255, 255, 255, 0.7)' }}
+              itemStyle={{ color: '#FFFFFF', fontWeight: '500' }}
+              labelStyle={{ color: 'rgba(255, 255, 255, 0.7)', marginBottom: '5px' }}
             />
             <ReferenceLine 
               y={avgUsage} 
               stroke="rgba(255, 170, 0, 0.5)" 
               strokeDasharray="3 3" 
+              strokeWidth={2}
             />
             <Area 
               type="monotone" 
               dataKey="usage" 
               stroke="#00E5E5" 
+              strokeWidth={2}
               fillOpacity={1} 
               fill="url(#energyGradient)" 
             />
@@ -140,13 +144,13 @@ const EnergyModule = () => {
       </div>
       
       {/* AI Energy Tip */}
-      <div className="mt-3 p-2 bg-cosmic-blue/30 rounded-lg flex items-center">
-        <div className="p-2 bg-cosmic-amber/20 rounded-full mr-3">
-          <LightbulbOff size={18} className="text-cosmic-amber" />
+      <div className="mt-4 p-3.5 bg-cosmic-blue/30 rounded-lg flex items-center border border-cosmic-amber/20">
+        <div className="p-2.5 bg-cosmic-amber/20 rounded-full mr-3.5">
+          <LightbulbOff size={20} className="text-cosmic-amber" />
         </div>
         <div>
-          <div className="text-sm font-medium">Energy Saving Tip</div>
-          <div className="text-xs text-white/70">Dim lights 10% to save approximately 2 kWh per day</div>
+          <div className="text-base font-medium tracking-wide">Energy Saving Tip</div>
+          <div className="text-sm text-white/80 mt-0.5">Dim lights 10% to save approximately 2 kWh per day</div>
         </div>
       </div>
     </ModuleCard>

@@ -25,17 +25,26 @@ const ModuleCard = ({
       floating && 'animate-float',
       className
     )}>
-      <div className="flex items-center mb-3">
-        {icon && <div className="mr-2">{icon}</div>}
-        <h3 className="font-orbitron text-base font-medium">{title}</h3>
+      <div className="flex items-center mb-4">
+        {icon && <div className="mr-2.5">{icon}</div>}
+        <h3 className="font-orbitron text-lg font-medium tracking-wide bg-gradient-to-r from-white via-white/90 to-white/80 bg-clip-text text-transparent">{title}</h3>
         
         {status !== 'none' && (
           <div className={cn(
-            'ml-auto w-3 h-3 rounded-full',
-            status === 'optimal' && 'bg-cosmic-teal animate-pulse-glow',
-            status === 'warning' && 'bg-cosmic-amber animate-pulse-amber',
-            status === 'alert' && 'bg-red-500 animate-pulse'
-          )} />
+            'ml-auto flex items-center',
+          )}>
+            <div className={cn(
+              'w-3 h-3 rounded-full',
+              status === 'optimal' && 'bg-cosmic-teal animate-pulse-glow',
+              status === 'warning' && 'bg-cosmic-amber animate-pulse-amber',
+              status === 'alert' && 'bg-red-500 animate-pulse'
+            )} />
+            <span className="ml-2 text-xs text-white/70 font-light">
+              {status === 'optimal' && 'Optimal'}
+              {status === 'warning' && 'Warning'}
+              {status === 'alert' && 'Alert'}
+            </span>
+          </div>
         )}
       </div>
       

@@ -40,47 +40,48 @@ const SecurityModule = () => {
   return (
     <ModuleCard 
       title="Security Hub" 
-      icon={<Shield className={allSecure ? "text-cosmic-teal" : "text-cosmic-amber"} />}
+      icon={<Shield className={allSecure ? "text-cosmic-teal" : "text-cosmic-amber"} size={22} />}
       status={allSecure ? 'optimal' : hasMotion ? 'warning' : 'alert'}
+      className="bg-gradient-to-br from-cosmic-blue/40 to-cosmic-blue/20"
     >
-      <div className="flex items-center justify-between mb-3">
+      <div className="flex items-center justify-between mb-4">
         <div className={cn(
-          "flex items-center px-3 py-1 rounded-full",
-          allSecure ? "bg-cosmic-teal/20" : "bg-cosmic-amber/20"
+          "flex items-center px-4 py-1.5 rounded-full",
+          allSecure ? "bg-cosmic-teal/20 border border-cosmic-teal/30" : "bg-cosmic-amber/20 border border-cosmic-amber/30"
         )}>
           {allSecure ? 
-            <CheckCircle size={16} className="text-cosmic-teal mr-2" /> : 
-            <Lock size={16} className="text-cosmic-amber mr-2" />
+            <CheckCircle size={18} className="text-cosmic-teal mr-2" /> : 
+            <Lock size={18} className="text-cosmic-amber mr-2" />
           }
-          <span className="text-sm font-medium">
+          <span className="text-base font-medium tracking-wide">
             {allSecure ? "All Secure" : "Attention Needed"}
           </span>
         </div>
 
-        <button className="text-xs underline text-cosmic-teal">
+        <button className="text-sm font-medium text-cosmic-teal hover:underline transition-all">
           View All Cameras
         </button>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
         {devices.map(device => (
           <div 
             key={device.id} 
             className={cn(
-              "flex items-center justify-between p-2 rounded-md",
-              device.status === 'secure' ? "bg-cosmic-blue/30" : 
-              device.status === 'motion' ? "bg-cosmic-amber/20" : 
-              device.status === 'unsecure' ? "bg-red-500/20" : "bg-gray-500/20"
+              "flex items-center justify-between p-3.5 rounded-lg border",
+              device.status === 'secure' ? "bg-cosmic-blue/40 border-cosmic-teal/10" : 
+              device.status === 'motion' ? "bg-cosmic-amber/20 border-cosmic-amber/20" : 
+              device.status === 'unsecure' ? "bg-red-500/20 border-red-500/30" : "bg-gray-500/20 border-gray-500/30"
             )}
           >
             <div className="flex items-center">
-              {device.type === 'camera' && <Camera size={16} className="mr-2" />}
-              {device.type === 'lock' && <Lock size={16} className="mr-2" />}
-              {device.type === 'sensor' && <Shield size={16} className="mr-2" />}
+              {device.type === 'camera' && <Camera size={18} className="mr-2.5" />}
+              {device.type === 'lock' && <Lock size={18} className="mr-2.5" />}
+              {device.type === 'sensor' && <Shield size={18} className="mr-2.5" />}
               
               <div>
-                <div className="text-sm">{device.name}</div>
-                <div className="text-xs text-white/70">
+                <div className="text-base font-medium">{device.name}</div>
+                <div className="text-xs text-white/70 mt-0.5 font-light">
                   {device.status === 'secure' && 'Secure'}
                   {device.status === 'unsecure' && 'Unlocked'}
                   {device.status === 'motion' && `Motion detected ${device.lastEvent}`}
@@ -93,7 +94,7 @@ const SecurityModule = () => {
               <button 
                 onClick={() => toggleLock(device.id)}
                 className={cn(
-                  "text-xs px-2 py-1 rounded-md transition-colors",
+                  "text-sm px-3 py-1.5 rounded-md transition-colors",
                   device.status === 'secure' ? 
                     "bg-cosmic-teal/20 hover:bg-cosmic-teal/30 text-cosmic-teal" : 
                     "bg-cosmic-amber/20 hover:bg-cosmic-amber/30 text-cosmic-amber"
@@ -104,7 +105,7 @@ const SecurityModule = () => {
             )}
             
             {device.type === 'camera' && (
-              <button className="text-xs px-2 py-1 rounded-md bg-cosmic-blue/40 hover:bg-cosmic-blue/50 transition-colors">
+              <button className="text-sm px-3 py-1.5 rounded-md bg-cosmic-blue/50 hover:bg-cosmic-blue/70 transition-colors">
                 View
               </button>
             )}

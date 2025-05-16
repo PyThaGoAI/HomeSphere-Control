@@ -9,52 +9,52 @@ const WeatherWidget = () => {
       <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-cosmic-teal/5 rounded-full blur-3xl"></div>
       
       <div className="flex flex-col items-center relative z-10">
-        <h3 className="font-orbitron text-lg mb-2 flex items-center">
-          <ThermometerSun size={18} className="mr-2 text-cosmic-amber" />
-          <span>Weather Forecast</span>
+        <h3 className="font-orbitron text-xl mb-3 flex items-center tracking-wide">
+          <ThermometerSun size={20} className="mr-2.5 text-cosmic-amber" />
+          <span className="bg-gradient-to-r from-white via-cosmic-amber to-white bg-clip-text text-transparent">Weather Forecast</span>
         </h3>
         
         {/* Main weather display with enhanced styling */}
         <div className="flex flex-col items-center py-4 w-full">
-          <div className="bg-gradient-to-b from-cosmic-amber/10 to-transparent p-4 rounded-full mb-2">
+          <div className="bg-gradient-to-b from-cosmic-amber/10 to-transparent p-4 rounded-full mb-3">
             <Sun className="text-cosmic-amber h-16 w-16 animate-pulse-glow" />
           </div>
           
-          <p className="text-3xl font-orbitron mt-2 bg-gradient-to-r from-white via-cosmic-amber to-white bg-clip-text text-transparent">24°C</p>
-          <div className="flex items-center mt-1 mb-2">
-            <p className="text-white/70">Sunny</p>
-            <Wind size={14} className="ml-2 text-white/50" />
-            <span className="text-xs text-white/50 ml-1">3 km/h</span>
+          <p className="text-4xl font-orbitron mt-2 bg-gradient-to-r from-white via-cosmic-amber to-white bg-clip-text text-transparent tracking-tight">24°C</p>
+          <div className="flex items-center mt-1 mb-3">
+            <p className="text-white/80 font-medium">Sunny</p>
+            <Wind size={14} className="ml-2.5 text-white/60" />
+            <span className="text-sm text-white/60 ml-1 font-light">3 km/h</span>
           </div>
           
           {/* Weather details with icons */}
-          <div className="grid grid-cols-2 gap-2 w-full bg-cosmic-blue/30 rounded-lg p-3 mb-4">
+          <div className="grid grid-cols-2 gap-3 w-full bg-cosmic-blue/40 rounded-lg p-4 mb-5 backdrop-blur-sm border border-cosmic-teal/10">
             <div className="flex items-center">
-              <Droplets size={16} className="text-cosmic-teal mr-2" />
+              <Droplets size={18} className="text-cosmic-teal mr-3" />
               <div>
-                <div className="text-xs text-white/50">Humidity</div>
-                <div className="text-sm">45%</div>
+                <div className="text-xs text-white/60 uppercase tracking-wider font-light">Humidity</div>
+                <div className="text-base font-medium">45%</div>
               </div>
             </div>
             <div className="flex items-center">
-              <Wind size={16} className="text-cosmic-teal mr-2" />
+              <Wind size={18} className="text-cosmic-teal mr-3" />
               <div>
-                <div className="text-xs text-white/50">Pressure</div>
-                <div className="text-sm">1013 hPa</div>
+                <div className="text-xs text-white/60 uppercase tracking-wider font-light">Pressure</div>
+                <div className="text-base font-medium">1013 hPa</div>
               </div>
             </div>
           </div>
           
-          <div className="w-full h-px bg-white/10 my-2"></div>
+          <div className="w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent my-3"></div>
           
           {/* Weather forecast with enhanced styling */}
           <div className="w-full">
-            <div className="flex items-center mb-2">
-              <Calendar size={14} className="text-cosmic-teal mr-1" />
-              <span className="text-xs text-white/70">3-Day Forecast</span>
+            <div className="flex items-center mb-3">
+              <Calendar size={16} className="text-cosmic-teal mr-2" />
+              <span className="text-sm text-white/80 font-medium tracking-wide">3-Day Forecast</span>
             </div>
             
-            <div className="w-full grid grid-cols-3 gap-2">
+            <div className="w-full grid grid-cols-3 gap-3">
               {[
                 { day: "Wed", icon: Sun, temp: "23°", condition: "Sunny" },
                 { day: "Thu", icon: Cloud, temp: "20°", condition: "Cloudy" },
@@ -62,12 +62,12 @@ const WeatherWidget = () => {
               ].map((day, i) => (
                 <div 
                   key={i} 
-                  className="flex flex-col items-center p-2 hover:bg-white/5 rounded-md transition-colors border border-transparent hover:border-cosmic-teal/10"
+                  className="flex flex-col items-center p-3 hover:bg-white/5 rounded-md transition-all duration-300 border border-transparent hover:border-cosmic-teal/20"
                 >
-                  <span className="text-xs text-white/70">{day.day}</span>
-                  <day.icon className="h-8 w-8 my-2 text-white/70" />
-                  <span className="text-sm font-medium">{day.temp}</span>
-                  <span className="text-xs text-white/50">{day.condition}</span>
+                  <span className="text-sm text-white/80 font-medium">{day.day}</span>
+                  <day.icon className="h-9 w-9 my-2.5 text-white/80" />
+                  <span className="text-base font-orbitron">{day.temp}</span>
+                  <span className="text-xs text-white/60 font-light">{day.condition}</span>
                 </div>
               ))}
             </div>

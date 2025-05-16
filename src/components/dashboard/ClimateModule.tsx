@@ -40,58 +40,59 @@ const ClimateModule = () => {
   return (
     <ModuleCard 
       title="Climate Control" 
-      icon={<Thermometer className="text-cosmic-teal" />}
+      icon={<Thermometer className="text-cosmic-teal" size={22} />}
       status={status}
       floating
+      className="bg-gradient-to-br from-cosmic-blue/40 to-cosmic-blue/20"
     >
       <div className="flex justify-between">
         <div className="flex-1">
           {/* Temperature control */}
-          <div className="flex items-center mb-4">
-            <div className="w-16 h-16 rounded-full cosmic-gradient flex items-center justify-center relative">
-              <span className="font-orbitron text-xl">{temperature.toFixed(1)}°</span>
+          <div className="flex items-center mb-5">
+            <div className="w-20 h-20 rounded-full cosmic-gradient flex items-center justify-center relative">
+              <span className="font-orbitron text-2xl">{temperature.toFixed(1)}°</span>
               <div className="absolute inset-0 rounded-full border-2 border-dashed border-cosmic-teal/30 animate-spin-slow" style={{animationDuration: '30s'}} />
             </div>
             
-            <div className="ml-4">
-              <div className="font-orbitron text-sm mb-1">Target: {targetTemp}°C</div>
-              <div className="flex space-x-2">
+            <div className="ml-6">
+              <div className="font-orbitron text-base mb-2 tracking-wide">Target: {targetTemp}°C</div>
+              <div className="flex space-x-3">
                 <button 
                   onClick={decreaseTemp}
-                  className="p-1 bg-cosmic-blue/50 rounded hover:bg-cosmic-blue/70 transition-colors"
+                  className="p-2 bg-cosmic-blue/50 rounded-lg hover:bg-cosmic-blue/70 transition-colors border border-cosmic-teal/10"
                 >
-                  <ChevronDown size={16} />
+                  <ChevronDown size={18} />
                 </button>
                 <button 
                   onClick={increaseTemp}
-                  className="p-1 bg-cosmic-blue/50 rounded hover:bg-cosmic-blue/70 transition-colors"
+                  className="p-2 bg-cosmic-blue/50 rounded-lg hover:bg-cosmic-blue/70 transition-colors border border-cosmic-teal/10"
                 >
-                  <ChevronUp size={16} />
+                  <ChevronUp size={18} />
                 </button>
               </div>
             </div>
           </div>
 
           {/* Status indicators */}
-          <div className="grid grid-cols-2 gap-2">
-            <div className="flex items-center p-2 bg-cosmic-blue/30 rounded-lg">
-              <Droplets size={18} className="text-cosmic-teal mr-2" />
+          <div className="grid grid-cols-2 gap-4">
+            <div className="flex items-center p-3.5 bg-cosmic-blue/30 rounded-lg border border-cosmic-teal/10">
+              <Droplets size={20} className="text-cosmic-teal mr-3" />
               <div>
-                <div className="text-xs text-white/70">Humidity</div>
-                <div className="text-sm font-semibold">{humidity}%</div>
+                <div className="text-xs text-white/70 uppercase tracking-wide font-light">Humidity</div>
+                <div className="text-base font-semibold">{humidity}%</div>
               </div>
             </div>
             
-            <div className="flex items-center p-2 bg-cosmic-blue/30 rounded-lg">
-              <Wind size={18} className={cn(
-                "mr-2", 
+            <div className="flex items-center p-3.5 bg-cosmic-blue/30 rounded-lg border border-cosmic-teal/10">
+              <Wind size={20} className={cn(
+                "mr-3", 
                 fanSpeed === 0 ? "text-white/50" : "text-cosmic-amber"
               )} />
               <div>
-                <div className="text-xs text-white/70">Fan</div>
+                <div className="text-xs text-white/70 uppercase tracking-wide font-light">Fan Speed</div>
                 <button 
                   onClick={nextFanSpeed}
-                  className="text-sm font-semibold hover:text-cosmic-amber transition-colors"
+                  className="text-base font-semibold hover:text-cosmic-amber transition-colors"
                 >
                   {fanSpeedNames[fanSpeed]}
                 </button>
@@ -100,23 +101,25 @@ const ClimateModule = () => {
           </div>
         </div>
         
-        <div className="w-24 flex flex-col items-center justify-center">
-          <div className="h-full w-4 bg-cosmic-blue/30 rounded-full relative overflow-hidden">
+        <div className="w-24 flex flex-col items-center justify-center ml-4">
+          <div className="h-full w-5 bg-cosmic-blue/30 rounded-full relative overflow-hidden border border-white/10">
             <div 
               className="absolute bottom-0 w-full bg-gradient-to-t from-cosmic-teal to-cosmic-teal/50 rounded-full transition-all duration-1000"
               style={{ height: `${((temperature - 15) / (30 - 15)) * 100}%` }}
             />
             <div 
-              className="absolute w-full h-1 bg-white/50 transition-all duration-300"
+              className="absolute w-full h-1.5 bg-white/50 transition-all duration-300"
               style={{ bottom: `${((targetTemp - 15) / (30 - 15)) * 100}%` }}
             />
           </div>
-          <div className="text-xs mt-1 text-white/70">Scale (°C)</div>
+          <div className="text-xs mt-2 text-white/70 text-center">Scale (°C)</div>
         </div>
       </div>
       
-      <div className="mt-3 text-xs text-white/70">
-        Air quality: Excellent • Last updated: Just now
+      <div className="mt-4 text-sm text-white/80 font-medium flex items-center border-t border-white/10 pt-3">
+        <span className="bg-cosmic-teal/20 px-3 py-1 rounded-full text-cosmic-teal">Excellent</span>
+        <span className="mx-2">•</span>
+        <span>Air quality updated just now</span>
       </div>
     </ModuleCard>
   );
