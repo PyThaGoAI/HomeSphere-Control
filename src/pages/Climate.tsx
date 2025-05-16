@@ -1,6 +1,7 @@
-
 import DashboardLayout from '@/components/layout/DashboardLayout';
 import { useState } from 'react';
+import { Thermometer } from 'lucide-react'; // Icon for the premium section
+import TemperatureHistoryChart from '@/components/climate/TemperatureHistoryChart'; // Import the new chart
 
 const Climate = () => {
   const [activeZone, setActiveZone] = useState("Living Room");
@@ -117,12 +118,18 @@ const Climate = () => {
           </div>
         </div>
         
-        <div className="p-6 bg-cosmic-blue/30 backdrop-blur-md border border-cosmic-teal/20 rounded-xl">
-          <h2 className="font-orbitron text-lg mb-4">Temperature History</h2>
-          <div className="h-48 bg-cosmic-blue/20 rounded-lg flex items-center justify-center">
-            <span className="text-white/70">Temperature chart will appear here</span>
+        <div className="p-3 sm:p-6 bg-[#1A1F2C] backdrop-blur-lg border border-cosmic-teal/50 rounded-xl shadow-xl shadow-cosmic-teal/10">
+          <div className="flex items-center mb-3 sm:mb-4">
+            <Thermometer size={20} className="text-cosmic-teal mr-2" />
+            <h2 className="font-orbitron text-base sm:text-lg text-white">
+              Temperature History
+              <span className="text-xs font-normal text-cosmic-teal opacity-80 ml-1">(Premium)</span>
+            </h2>
           </div>
-          <div className="mt-4 text-sm text-white/70">
+          <div className="h-48 sm:h-56 bg-transparent rounded-lg">
+            <TemperatureHistoryChart />
+          </div>
+          <div className="mt-3 sm:mt-4 text-xs sm:text-sm text-white/70">
             Today's average: 22.3°C • Energy used: 2.8 kWh
           </div>
         </div>
