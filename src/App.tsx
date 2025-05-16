@@ -18,13 +18,20 @@ import Guests from "./pages/Guests";
 import Logs from "./pages/Logs";
 import Settings from "./pages/Settings";
 
-// Import the new creative pages
+// Import the creative pages
 import Automation from "./pages/Automation";
 import Ecosystem from "./pages/Ecosystem";
 import Analytics from "./pages/Analytics";
 import Network from "./pages/Network"; 
 import Spatial from "./pages/Spatial";
 import LandingPage from "./pages/LandingPage";
+
+// Import our new premium pages
+import VoiceControl from "./pages/VoiceControl";
+import Visualization3D from "./pages/Visualization3D";
+import Predictions from "./pages/Predictions";
+import DeviceManager from "./pages/DeviceManager";
+import SystemHealth from "./pages/SystemHealth";
 
 const queryClient = new QueryClient();
 
@@ -47,12 +54,19 @@ const App = () => (
           <Route path="/logs" element={<Logs />} />
           <Route path="/settings" element={<Settings />} />
           
-          {/* New creative page routes */}
+          {/* Creative page routes */}
           <Route path="/automation" element={<Automation />} />
           <Route path="/ecosystem" element={<Ecosystem />} />
           <Route path="/analytics" element={<Analytics />} />
           <Route path="/network" element={<Network />} />
           <Route path="/spatial" element={<Spatial />} />
+          
+          {/* New premium page routes */}
+          <Route path="/voice-control" element={<VoiceControl />} />
+          <Route path="/visualization-3d" element={<Visualization3D />} />
+          <Route path="/predictions" element={<Predictions />} />
+          <Route path="/device-manager" element={<DeviceManager />} />
+          <Route path="/system-health" element={<SystemHealth />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

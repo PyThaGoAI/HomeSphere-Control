@@ -18,7 +18,12 @@ import {
   Hexagon,
   Gitlab,
   Map,
-  Activity
+  Activity,
+  Mic,
+  Layers,
+  TrendingUp,
+  HardDrive,
+  Server
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -46,12 +51,18 @@ const Sidebar = () => {
     { id: 'scenes', icon: Film, label: 'Scenes', path: '/scenes' },
     { id: 'assistant', icon: Bot, label: 'Sphere AI', path: '/assistant' },
     { id: 'guests', icon: Users, label: 'Guests', path: '/guests' },
-    // New pages added here
+    // Creative pages
     { id: 'automation', icon: Cpu, label: 'Automation Lab', path: '/automation' },
     { id: 'ecosystem', icon: Hexagon, label: 'Ecosystem', path: '/ecosystem' },
     { id: 'analytics', icon: Activity, label: 'Analytics', path: '/analytics' },
     { id: 'network', icon: Gitlab, label: 'Network Mesh', path: '/network' },
     { id: 'spatial', icon: Map, label: 'Spatial Map', path: '/spatial' },
+    // New premium pages
+    { id: 'voice-control', icon: Mic, label: 'Voice Control', path: '/voice-control' },
+    { id: 'visualization-3d', icon: Layers, label: '3D Visualization', path: '/visualization-3d' },
+    { id: 'predictions', icon: TrendingUp, label: 'AI Predictions', path: '/predictions' },
+    { id: 'device-manager', icon: HardDrive, label: 'Device Manager', path: '/device-manager' },
+    { id: 'system-health', icon: Server, label: 'System Health', path: '/system-health' },
     // Original pages continue
     { id: 'logs', icon: FileText, label: 'Activity Log', path: '/logs' },
     { id: 'settings', icon: Settings, label: 'Settings', path: '/settings' },
