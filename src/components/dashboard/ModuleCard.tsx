@@ -21,12 +21,13 @@ const ModuleCard = ({
 }: ModuleCardProps) => {
   return (
     <div className={cn(
-      'module-card relative',
+      'module-card relative h-full flex flex-col',
       floating && 'animate-float',
+      'bg-cosmic-blue/20 backdrop-blur-sm p-6 rounded-xl border border-white/10 shadow-lg hover:border-cosmic-teal/20 transition-all duration-300',
       className
     )}>
-      <div className="flex items-center mb-4">
-        {icon && <div className="mr-2.5">{icon}</div>}
+      <div className="flex items-center mb-5">
+        {icon && <div className="mr-3">{icon}</div>}
         <h3 className="font-orbitron text-lg font-medium tracking-wide bg-gradient-to-r from-white via-white/90 to-white/80 bg-clip-text text-transparent">{title}</h3>
         
         {status !== 'none' && (
@@ -48,7 +49,7 @@ const ModuleCard = ({
         )}
       </div>
       
-      <div>{children}</div>
+      <div className="flex-grow flex flex-col">{children}</div>
     </div>
   );
 };

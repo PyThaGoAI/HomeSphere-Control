@@ -11,9 +11,9 @@ import WeatherWidget from './WeatherWidget';
 
 const Dashboard = () => {
   return (
-    <div className="space-y-8">
+    <div className="space-y-10 max-w-7xl mx-auto">
       {/* Home Status Section with enhanced layout */}
-      <div className="flex flex-col items-center justify-center mb-8 relative">
+      <div className="flex flex-col items-center justify-center mb-10 relative">
         <div className="absolute w-64 h-64 bg-cosmic-teal/5 rounded-full blur-3xl -z-10"></div>
         <HomeStatusOrb size="lg" />
         <div className="mt-4 text-center">
@@ -23,49 +23,58 @@ const Dashboard = () => {
       </div>
       
       {/* Quick Statistics Row */}
-      <QuickStats />
+      <section className="mb-10">
+        <QuickStats />
+      </section>
       
-      {/* Quick Scene Access */}
-      <div className="mb-8">
-        <div className="flex items-center mb-4">
+      {/* Quick Scene Access - Consistent Section */}
+      <section className="mb-10">
+        <div className="flex items-center mb-6">
           <h2 className="font-orbitron text-xl text-white">Quick Scenes</h2>
           <div className="h-px flex-grow bg-gradient-to-r from-transparent via-cosmic-teal/30 to-transparent ml-4"></div>
         </div>
         <ScenesModule />
-      </div>
+      </section>
       
-      {/* Weather and Recent Activity - New Section */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
-        <div className="lg:col-span-1">
-          <WeatherWidget />
+      {/* Weather and Recent Activity - Equal Height Section */}
+      <section className="mb-10">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div className="lg:col-span-1 h-full">
+            <WeatherWidget />
+          </div>
+          <div className="lg:col-span-2 h-full">
+            <RecentActivity />
+          </div>
         </div>
-        <div className="lg:col-span-2">
-          <RecentActivity />
-        </div>
-      </div>
+      </section>
       
-      {/* Main Control Panels */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-        <div className="relative">
-          <div className="absolute w-full h-full bg-cosmic-amber/5 rounded-xl blur-xl -z-10 translate-y-4"></div>
-          <LightingModule />
+      {/* Main Control Panels - Equal Sections with Consistent Styling */}
+      <section className="mb-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="relative h-full">
+            <div className="absolute w-full h-full bg-cosmic-amber/5 rounded-xl blur-xl -z-10 translate-y-4"></div>
+            <LightingModule />
+          </div>
+          <div className="relative h-full">
+            <div className="absolute w-full h-full bg-cosmic-teal/5 rounded-xl blur-xl -z-10 translate-y-4"></div>
+            <ClimateModule />
+          </div>
         </div>
-        <div className="relative">
-          <div className="absolute w-full h-full bg-cosmic-teal/5 rounded-xl blur-xl -z-10 translate-y-4"></div>
-          <ClimateModule />
-        </div>
-      </div>
+      </section>
       
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="relative">
-          <div className="absolute w-full h-full bg-cosmic-teal/5 rounded-xl blur-xl -z-10 translate-y-4"></div>
-          <SecurityModule />
+      {/* Second Row of Control Panels - Equal Height and Consistent with First Row */}
+      <section className="mb-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="relative h-full">
+            <div className="absolute w-full h-full bg-cosmic-teal/5 rounded-xl blur-xl -z-10 translate-y-4"></div>
+            <SecurityModule />
+          </div>
+          <div className="relative h-full">
+            <div className="absolute w-full h-full bg-cosmic-amber/5 rounded-xl blur-xl -z-10 translate-y-4"></div>
+            <EnergyModule />
+          </div>
         </div>
-        <div className="relative">
-          <div className="absolute w-full h-full bg-cosmic-amber/5 rounded-xl blur-xl -z-10 translate-y-4"></div>
-          <EnergyModule />
-        </div>
-      </div>
+      </section>
     </div>
   );
 };

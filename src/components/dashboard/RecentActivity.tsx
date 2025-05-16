@@ -1,6 +1,7 @@
 
 import { Clock, Lock, Lightbulb, Thermometer } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import ModuleCard from './ModuleCard';
 
 const activities = [
   {
@@ -43,13 +44,12 @@ const activities = [
 
 const RecentActivity = () => {
   return (
-    <div className="module-card h-full">
-      <div className="flex items-center mb-4">
-        <Clock size={20} className="text-cosmic-teal mr-2.5" />
-        <h3 className="font-orbitron text-xl tracking-wide bg-gradient-to-r from-white via-cosmic-teal to-white bg-clip-text text-transparent">Recent Activity</h3>
-      </div>
-      
-      <div className="space-y-3.5">
+    <ModuleCard 
+      title="Recent Activity" 
+      icon={<Clock size={20} className="text-cosmic-teal" />}
+      className="h-full"
+    >
+      <div className="space-y-3 flex-grow">
         {activities.map((activity) => (
           <div 
             key={activity.id} 
@@ -70,7 +70,7 @@ const RecentActivity = () => {
       <button className="w-full mt-5 py-2.5 px-4 bg-cosmic-blue/50 hover:bg-cosmic-blue/70 rounded-lg border border-cosmic-teal/10 text-sm tracking-wide transition-all duration-300 font-medium">
         View All Activity
       </button>
-    </div>
+    </ModuleCard>
   );
 };
 
