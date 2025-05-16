@@ -22,7 +22,6 @@ const ModuleCard = ({
   return (
     <div className={cn(
       'module-card relative h-full flex flex-col',
-      floating && 'animate-float',
       'bg-cosmic-blue/20 backdrop-blur-sm p-6 rounded-xl border border-white/10 shadow-lg hover:border-cosmic-teal/20 transition-all duration-300',
       className
     )}>

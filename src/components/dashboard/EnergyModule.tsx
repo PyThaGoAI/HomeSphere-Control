@@ -75,7 +75,6 @@ const EnergyModule = () => {
       title="Energy Insights" 
       icon={<Zap className={isHighUsage ? "text-cosmic-amber" : "text-cosmic-teal"} size={22} />}
       status={isHighUsage ? 'warning' : 'optimal'}
-      floating
       className="bg-gradient-to-br from-cosmic-blue/40 to-cosmic-blue/20"
     >
       <div className="flex justify-between items-center mb-4 bg-cosmic-blue/30 p-3.5 rounded-lg border border-white/10">
