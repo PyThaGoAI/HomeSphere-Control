@@ -60,7 +60,7 @@ const Sidebar = () => {
   return (
     <aside 
       className={cn(
-        "bg-cosmic-blue/30 backdrop-blur-md border-r border-cosmic-teal/20 h-full transition-all duration-300 overflow-hidden relative z-10",
+        "bg-cosmic-blue/30 backdrop-blur-md border-r border-cosmic-teal/20 h-full transition-all duration-300 overflow-hidden relative z-10 rounded-md",
         collapsed ? "w-[70px]" : "w-[280px]"
       )}
     >
@@ -88,7 +88,7 @@ const Sidebar = () => {
         <div className="p-4 border-t border-cosmic-teal/20">
           <button 
             onClick={() => setCollapsed(!collapsed)}
-            className="cosmic-gradient rounded-full p-2 w-full flex items-center justify-center transition-all duration-300 hover:scale-105 hover:shadow-[0_0_15px_rgba(0,229,229,0.7)] text-white group"
+            className="cosmic-gradient rounded-lg p-2 w-full flex items-center justify-center transition-all duration-300 hover:scale-105 hover:shadow-[0_0_15px_rgba(0,229,229,0.7)] text-white group"
             aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
           >
             <div className={`flex items-center justify-center ${collapsed ? "" : "w-full"}`}>
@@ -101,7 +101,7 @@ const Sidebar = () => {
                 </>
               )}
             </div>
-            <div className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-50 bg-cosmic-teal/10 animate-pulse-glow pointer-events-none"></div>
+            <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-50 bg-cosmic-teal/10 animate-pulse-glow pointer-events-none"></div>
           </button>
         </div>
       </div>
