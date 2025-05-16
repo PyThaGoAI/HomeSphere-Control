@@ -1,3 +1,4 @@
+
 import DashboardLayout from '@/components/layout/DashboardLayout';
 import { useState } from 'react';
 import { useTheme } from '@/contexts/ThemeContext';
@@ -657,7 +658,7 @@ const Settings = () => {
                     </div>
                     
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                      <div className="relative cursor-pointer group">
+                      <div className="relative cursor-pointer group" onClick={() => console.log('Dark theme clicked')}>
                         <div className="border-2 border-cosmic-teal rounded-lg p-1" style={{ borderColor: `${currentTheme.color}` }}>
                           <div className="h-24 rounded bg-cosmic-blue/80 overflow-hidden">
                             <div className="p-2">
@@ -675,7 +676,7 @@ const Settings = () => {
                         <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 bg-cosmic-teal/10 transition-opacity pointer-events-none" style={{ backgroundColor: `${currentTheme.color}10` }}></div>
                       </div>
                       
-                      <div className="relative cursor-pointer group">
+                      <div className="relative cursor-pointer group" onClick={() => console.log('Light theme clicked')}>
                         <div className="border-2 border-cosmic-blue/20 hover:border-cosmic-teal/50 transition-colors rounded-lg p-1" style={{ borderColor: `${currentTheme.color}20` }}>
                           <div className="h-24 rounded bg-white overflow-hidden">
                             <div className="p-2">
@@ -691,7 +692,7 @@ const Settings = () => {
                         <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 bg-cosmic-teal/10 transition-opacity pointer-events-none" style={{ backgroundColor: `${currentTheme.color}10` }}></div>
                       </div>
                       
-                      <div className="relative cursor-pointer group">
+                      <div className="relative cursor-pointer group" onClick={() => console.log('Auto theme clicked')}>
                         <div className="border-2 border-cosmic-blue/20 hover:border-cosmic-teal/50 transition-colors rounded-lg p-1" style={{ borderColor: `${currentTheme.color}20` }}>
                           <div className="h-24 rounded overflow-hidden" style={{ background: 'linear-gradient(to bottom, #fff 50%, #121726 50%)' }}>
                             <div className="p-2">
@@ -723,11 +724,11 @@ const Settings = () => {
                       {colorSchemes.map((scheme) => (
                         <div 
                           key={scheme.name} 
-                          className="flex flex-col items-center"
+                          className="flex flex-col items-center cursor-pointer"
                           onClick={() => handleThemeChange(scheme)}
                         >
                           <div 
-                            className={`w-12 h-12 rounded-full cursor-pointer ${
+                            className={`w-12 h-12 rounded-full ${
                               currentTheme.name === scheme.name ? 
                                 'ring-2 ring-offset-4 ring-offset-cosmic-blue/30 ring-white' : 
                                 'hover:ring-1 hover:ring-white/50 hover:ring-offset-2 hover:ring-offset-cosmic-blue/20'
