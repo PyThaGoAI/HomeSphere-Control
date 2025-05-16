@@ -1,9 +1,8 @@
-
 import DashboardLayout from '@/components/layout/DashboardLayout';
 import Dashboard from '@/components/dashboard/Dashboard';
 import { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { ChevronRight, Star, Sparkles, Diamond, Crown, ExternalLink, Zap, Activity } from 'lucide-react';
+import { ChevronRight, Star, Sparkles, Diamond, Crown, ExternalLink, Zap, Activity, Brain, Leaf, Shield } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 
@@ -13,28 +12,31 @@ const Index = () => {
     document.title = "HomeSphere - Smart Home Control Dashboard";
   }, []);
 
-  // Premium features with proper Tailwind classes
+  // Premium features with proper Tailwind classes and added icons
   const premiumFeatures = [
     { 
       title: "Advanced AI Control", 
       description: "Full voice control through every room with custom routines and advanced learning capabilities.",
       linkTo: "/assistant",
       bgClass: "bg-gradient-to-br from-cosmic-teal/20 to-cosmic-teal/5",
-      hoverGlowClass: "hover:shadow-cosmic-teal/20"
+      hoverGlowClass: "hover:shadow-cosmic-teal/20",
+      icon: Brain
     },
     { 
       title: "Energy Optimization", 
       description: "Save up to 35% on utility costs with intelligent scheduling and consumption analysis.",
       linkTo: "/energy",
       bgClass: "bg-gradient-to-br from-cosmic-amber/20 to-cosmic-amber/5",
-      hoverGlowClass: "hover:shadow-cosmic-amber/20"
+      hoverGlowClass: "hover:shadow-cosmic-amber/20",
+      icon: Leaf
     },
     { 
       title: "Security Shield", 
       description: "Multi-layered protection system with facial recognition and behavior analysis.",
       linkTo: "/security",
       bgClass: "bg-gradient-to-br from-purple-500/20 to-purple-500/5",
-      hoverGlowClass: "hover:shadow-purple-500/20"
+      hoverGlowClass: "hover:shadow-purple-500/20",
+      icon: Shield
     }
   ];
 
@@ -157,7 +159,10 @@ const Index = () => {
                   feature.hoverGlowClass
                 )}
               >
-                <h3 className="text-2xl font-orbitron mb-3 text-white">{feature.title}</h3>
+                <div className="flex items-center mb-3">
+                  <feature.icon size={24} className="text-white mr-2" />
+                  <h3 className="text-2xl font-orbitron text-white">{feature.title}</h3>
+                </div>
                 <p className="text-white/70 mb-8 font-exo">{feature.description}</p>
                 <div className="flex items-center text-cosmic-teal text-sm font-medium">
                   <span className="font-orbitron">Explore</span>
