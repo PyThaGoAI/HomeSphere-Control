@@ -97,10 +97,6 @@ const LightActivityChart: React.FC = () => {
         <ChartTooltip
           cursor={false}
           content={<ChartTooltipContent indicator="line" />}
-          defaultCellStyle={{
-            backgroundColor: 'transparent',
-            border: 'none',
-          }}
           contentStyle={{ 
             backgroundColor: 'rgba(10, 20, 40, 0.85)', 
             borderColor: 'var(--color-usage)',
