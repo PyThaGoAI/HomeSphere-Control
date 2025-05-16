@@ -60,7 +60,6 @@ const Settings = () => {
     });
   };
 
-  // Lista noastră de culori pentru teme
   const colorSchemes = [
     { name: "Cosmic Teal", color: "#00E5E5" },
     { name: "Cosmic Purple", color: "#9b87f5" },
@@ -659,7 +658,7 @@ const Settings = () => {
                     
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                       <div className="relative cursor-pointer group">
-                        <div className="border-2 border-cosmic-teal rounded-lg p-1" style={{ borderColor: currentTheme.color }}>
+                        <div className="border-2 border-cosmic-teal rounded-lg p-1" style={{ borderColor: `${currentTheme.color}` }}>
                           <div className="h-24 rounded bg-cosmic-blue/80 overflow-hidden">
                             <div className="p-2">
                               <div className="h-3 w-full bg-cosmic-teal/20 rounded mb-2" style={{ backgroundColor: `${currentTheme.color}20` }}></div>
@@ -677,7 +676,7 @@ const Settings = () => {
                       </div>
                       
                       <div className="relative cursor-pointer group">
-                        <div className="border-2 border-cosmic-blue/20 hover:border-cosmic-teal/50 transition-colors rounded-lg p-1" style={{ borderColor: `${currentTheme.color}20`, hoverBorderColor: `${currentTheme.color}50` }}>
+                        <div className="border-2 border-cosmic-blue/20 hover:border-cosmic-teal/50 transition-colors rounded-lg p-1" style={{ borderColor: `${currentTheme.color}20` }}>
                           <div className="h-24 rounded bg-white overflow-hidden">
                             <div className="p-2">
                               <div className="h-3 w-full bg-gray-200 rounded mb-2"></div>
@@ -693,7 +692,7 @@ const Settings = () => {
                       </div>
                       
                       <div className="relative cursor-pointer group">
-                        <div className="border-2 border-cosmic-blue/20 hover:border-cosmic-teal/50 transition-colors rounded-lg p-1" style={{ borderColor: `${currentTheme.color}20`, hoverBorderColor: `${currentTheme.color}50` }}>
+                        <div className="border-2 border-cosmic-blue/20 hover:border-cosmic-teal/50 transition-colors rounded-lg p-1" style={{ borderColor: `${currentTheme.color}20` }}>
                           <div className="h-24 rounded overflow-hidden" style={{ background: 'linear-gradient(to bottom, #fff 50%, #121726 50%)' }}>
                             <div className="p-2">
                               <div className="h-3 w-full bg-gray-200/50 rounded mb-2"></div>
