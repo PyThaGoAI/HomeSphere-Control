@@ -1,10 +1,13 @@
 
 #root {
-  max-width: 1280px;
+  max-width: 100%;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0;
   text-align: center;
   color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .logo {
@@ -13,9 +16,11 @@
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -36,10 +41,17 @@
 }
 
 .card {
-  padding: 2em;
+  padding: 1.5em;
   color: white;
 }
 
 .read-the-docs {
   color: white;
+}
+
+/* Responsive utilities */
+@media (max-width: 640px) {
+  .card {
+    padding: 1em;
+  }
 }

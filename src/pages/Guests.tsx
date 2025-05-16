@@ -1,7 +1,7 @@
 
 import DashboardLayout from '@/components/layout/DashboardLayout';
 import { useState } from 'react';
-import { Users, User, Plus, Clock, Calendar, Mail, Check, X, Edit, Home, ChevronRight } from 'lucide-react';
+import { Users, User, Plus, Clock, Calendar, Mail, Check, X, Edit } from 'lucide-react';
 
 const Guests = () => {
   const [activeTab, setActiveTab] = useState("active");
