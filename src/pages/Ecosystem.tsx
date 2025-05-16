@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import DashboardLayout from '@/components/layout/DashboardLayout';
 import { Button } from "@/components/ui/button";
@@ -90,7 +89,7 @@ const Ecosystem = () => {
                 <RefreshCw size={14} className="mr-1.5" />
                 Restart
               </Button>
-              <Button variant="ghost" size="sm">
+              <Button variant="ghost" size="sm" className="text-cosmic-teal hover:text-cosmic-teal/80 hover:bg-cosmic-teal/10">
                 Configure
               </Button>
             </CardFooter>
