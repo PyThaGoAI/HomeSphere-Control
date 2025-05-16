@@ -1,8 +1,9 @@
+
 import DashboardLayout from '@/components/layout/DashboardLayout';
 import Dashboard from '@/components/dashboard/Dashboard';
 import { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { ChevronRight, Star, Sparkles, Diamond, Crown, ExternalLink, Zap, Activity, Brain, Leaf, Shield } from 'lucide-react';
+import { ChevronRight, Star, Sparkles, Diamond, Crown, ExternalLink, Zap, Activity, Brain, Leaf, Shield, Clock, Chart, Home, Info } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 
@@ -119,6 +120,10 @@ const Index = () => {
           
           {/* New Quick actions section */}
           <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4 bg-cosmic-blue/20 backdrop-blur-lg p-4 rounded-lg border border-white/5">
+            <h3 className="col-span-1 md:col-span-3 flex items-center pb-2 mb-2 border-b border-white/10">
+              <Clock className="text-cosmic-amber mr-2" size={20} />
+              <span className="font-orbitron text-lg">Quick Actions</span>
+            </h3>
             {quickActions.map((action, index) => (
               <Link 
                 to={action.linkTo}
@@ -139,7 +144,13 @@ const Index = () => {
         </div>
         
         {/* Dashboard section with improved spacing */}
-        <Dashboard />
+        <div className="mb-16">
+          <div className="flex items-center mb-6">
+            <Home className="text-cosmic-teal mr-3" size={24} />
+            <h2 className="text-3xl font-orbitron leading-none tracking-wide">Dashboard</h2>
+          </div>
+          <Dashboard />
+        </div>
         
         {/* Enhanced Premium Features Section with better cards */}
         <div className="mt-16 mb-8">
@@ -176,7 +187,7 @@ const Index = () => {
         {/* Redesigned User Statistics & Insights */}
         <div className="mt-20 mb-16">
           <div className="flex items-center mb-8">
-            <Star className="text-cosmic-amber mr-3" size={28} />
+            <Chart className="text-cosmic-amber mr-3" size={28} />
             <h2 className="text-3xl font-orbitron leading-none tracking-wide">Your Smart Home Insights</h2>
           </div>
           
@@ -199,7 +210,10 @@ const Index = () => {
             <div className="mt-12 pt-6 border-t border-cosmic-teal/10">
               <div className="flex flex-col md:flex-row items-center justify-between">
                 <div className="mb-6 md:mb-0">
-                  <h4 className="font-orbitron text-xl mb-2">Smart Home Health</h4>
+                  <h4 className="font-orbitron text-xl mb-2 flex items-center">
+                    <Info className="text-cosmic-teal mr-2" size={18} />
+                    Smart Home Health
+                  </h4>
                   <p className="text-white/70 text-base font-exo">Your system is performing optimally with no critical alerts</p>
                 </div>
                 <Button className="bg-cosmic-blue/60 hover:bg-cosmic-blue/80 border border-cosmic-teal/30 text-white font-exo tracking-wide px-6 py-5 flex items-center gap-2">
@@ -213,8 +227,8 @@ const Index = () => {
 
         {/* New certification badge section */}
         <div className="mt-16 mb-8 flex items-center justify-center">
-          <div className="flex flex-col items-center bg-cosmic-blue/30 backdrop-blur-sm rounded-full px-8 py-4 border border-cosmic-teal/20">
-            <Sparkles className="text-cosmic-amber mb-2" size={20} />
+          <div className="flex items-center bg-cosmic-blue/30 backdrop-blur-sm rounded-full px-8 py-4 border border-cosmic-teal/20">
+            <Sparkles className="text-cosmic-amber mr-2" size={20} />
             <p className="text-xs text-white/60 font-exo">Certified HomeSphere Premium Experience</p>
           </div>
         </div>
