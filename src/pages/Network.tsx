@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import DashboardLayout from '@/components/layout/DashboardLayout';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
@@ -34,7 +33,7 @@ const Network = () => {
               <RefreshCw size={16} className={`mr-2 text-white ${scanningNetwork ? 'animate-spin' : ''}`} />
               <span className="text-white">{scanningNetwork ? 'Scanning...' : 'Scan Network'}</span>
             </Button>
-            <Button className="bg-cosmic-teal hover:bg-cosmic-teal/80 text-black">
+            <Button className="bg-cosmic-teal hover:bg-cosmic-teal/80">
               <span className="text-black">Network Health Report</span>
             </Button>
           </div>
@@ -44,7 +43,7 @@ const Network = () => {
           <Card className="bg-cosmic-blue/30 backdrop-blur-md border border-cosmic-teal/30 relative overflow-hidden">
             <div className="absolute top-0 left-0 h-1 w-full bg-gradient-to-r from-cosmic-teal via-cosmic-teal/50 to-transparent"></div>
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
+              <CardTitle className="flex items-center gap-2 text-white">
                 <Wifi size={18} className="text-cosmic-teal" /> Main Network
               </CardTitle>
               <CardDescription>Primary WiFi network</CardDescription>
@@ -94,7 +93,7 @@ const Network = () => {
           
           <Card className="bg-cosmic-blue/30 backdrop-blur-md border border-cosmic-teal/20">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
+              <CardTitle className="flex items-center gap-2 text-white">
                 <Gitlab size={18} className="text-cosmic-teal" /> Mesh Performance
               </CardTitle>
               <CardDescription>Coverage and connectivity</CardDescription>
@@ -145,7 +144,7 @@ const Network = () => {
           
           <Card className="bg-cosmic-blue/30 backdrop-blur-md border border-cosmic-teal/20">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
+              <CardTitle className="flex items-center gap-2 text-white">
                 <Activity size={18} className="text-cosmic-teal" /> Network Activity
               </CardTitle>
               <CardDescription>Current data transfer</CardDescription>
@@ -216,7 +215,7 @@ const Network = () => {
             <Card className="bg-cosmic-blue/30 backdrop-blur-md border border-cosmic-teal/20">
               <CardHeader>
                 <div className="flex justify-between items-center">
-                  <CardTitle>Connected Devices</CardTitle>
+                  <CardTitle className="text-white">Connected Devices</CardTitle>
                   <Badge className="bg-cosmic-teal/20 text-cosmic-teal">24 Online</Badge>
                 </div>
                 <CardDescription>All devices currently connected to your network</CardDescription>
@@ -257,7 +256,9 @@ const Network = () => {
                 </div>
               </CardContent>
               <CardFooter className="border-t border-white/10 flex justify-center pt-4">
-                <Button variant="outline" className="border-cosmic-teal/20 text-white">View All 24 Devices</Button>
+                <Button variant="outline" className="border-cosmic-teal/20 bg-cosmic-blue/40">
+                  <span className="text-white">View All 24 Devices</span>
+                </Button>
               </CardFooter>
             </Card>
           </TabsContent>
@@ -265,7 +266,7 @@ const Network = () => {
           <TabsContent value="mesh" className="mt-4">
             <Card className="bg-cosmic-blue/30 backdrop-blur-md border border-cosmic-teal/20">
               <CardHeader>
-                <CardTitle>Mesh Network Nodes</CardTitle>
+                <CardTitle className="text-white">Mesh Network Nodes</CardTitle>
                 <CardDescription>Your connected mesh network devices</CardDescription>
               </CardHeader>
               <CardContent>
