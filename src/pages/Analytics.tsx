@@ -1,3 +1,4 @@
+
 import DashboardLayout from '@/components/layout/DashboardLayout';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -56,8 +57,8 @@ const Analytics = () => {
                 <SelectItem value="custom">Custom Range</SelectItem>
               </SelectContent>
             </Select>
-            <Button variant="outline" className="border-cosmic-teal/20 text-white">
-              <RefreshCw size={16} className="mr-2" /> Refresh
+            <Button variant="outline" className="border-cosmic-teal/20 text-black">
+              <RefreshCw size={16} className="mr-2 text-black" /> Refresh
             </Button>
             <Button className="bg-cosmic-teal hover:bg-cosmic-teal/80 text-black">
               <Download size={16} className="mr-2" /> Export
