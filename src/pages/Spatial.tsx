@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import DashboardLayout from '@/components/layout/DashboardLayout';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -6,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Map, Plus, Lightbulb, Thermometer, Lock, Wifi, Eye } from 'lucide-react';
+import { Map, Plus, Lightbulb, Thermometer, Lock, Wifi, Eye, TrendingUp, ArrowRight } from 'lucide-react';
 
 const Spatial = () => {
   const [viewMode, setViewMode] = useState<'2d' | '3d'>('2d');
@@ -61,7 +60,10 @@ const Spatial = () => {
                 <div className="flex justify-between items-center">
                   <CardTitle className="text-white">{viewMode === '2d' ? '2D Floor Plan' : '3D Spatial View'}</CardTitle>
                   <div className="flex gap-2">
-                    <Badge className="bg-cosmic-teal text-white">Main Floor</Badge>
+                    <Badge className="bg-cosmic-teal text-white">{
+                      selectedFloor === 'main' ? 'Main Floor' :
+                      selectedFloor === 'upper' ? 'Upper Floor' : 'Basement'
+                    }</Badge>
                     <Button variant="ghost" size="icon" className="h-8 w-8 text-white">
                       <Map size={16} className="text-white" />
                     </Button>
@@ -232,11 +234,44 @@ const Spatial = () => {
                 </div>
               </TabsContent>
               
-              <TabsContent value="paths" className="mt-4 h-[500px] flex items-center justify-center p-6">
-                <div className="text-center text-white">
-                  <p>Movement paths and activity heatmaps would display here</p>
-                  <p className="text-sm mt-2">Showing how residents move through the home</p>
-                </div>
+              <TabsContent value="paths" className="mt-4">
+                <Card className="bg-cosmic-blue/30 border border-cosmic-teal/20 backdrop-blur-md h-full min-h-[500px] flex flex-col">
+                  <CardHeader>
+                    <div className="flex justify-between items-center">
+                      <CardTitle className="text-white">Activity Flow & Heatmaps</CardTitle>
+                      <Badge className="bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg">PRO</Badge>
+                    </div>
+                    <CardDescription className="text-white/70">
+                      Visualize movement patterns and high-traffic areas within your home.
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="flex-grow flex flex-col items-center justify-center text-center p-4 md:p-6">
+                    <div className="w-full flex-grow bg-cosmic-blue/40 rounded-lg flex items-center justify-center mb-4 border border-dashed border-white/20 p-4">
+                      <div className="text-center">
+                        <TrendingUp size={40} className="mx-auto mb-3 text-white/50 md:size-48" />
+                        <p className="text-md md:text-lg font-semibold text-white">Advanced Heatmap & Path Analysis</p>
+                        <p className="text-xs md:text-sm text-white/60">Detailed visualization of movement trends will appear here.</p>
+                      </div>
+                    </div>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4 w-full">
+                      <div className="p-3 bg-cosmic-blue/20 rounded-lg border border-white/10 text-left">
+                        <p className="text-xs text-white/70 mb-0.5">Peak Activity Zone</p>
+                        <p className="text-sm md:text-base font-semibold text-white">Living Room <span className="text-xs text-white/70">(2-4 PM)</span></p>
+                      </div>
+                      <div className="p-3 bg-cosmic-blue/20 rounded-lg border border-white/10 text-left">
+                        <p className="text-xs text-white/70 mb-0.5">Most Common Route</p>
+                        <p className="text-sm md:text-base font-semibold text-white flex items-center">
+                          Kitchen <ArrowRight size={14} className="inline mx-1 text-cosmic-teal" /> Living Room
+                        </p>
+                      </div>
+                      <div className="p-3 bg-cosmic-blue/20 rounded-lg border border-white/10 text-left">
+                        <p className="text-xs text-white/70 mb-0.5">Avg. Dwell Time</p>
+                        <p className="text-sm md:text-base font-semibold text-white">18 min <span className="text-xs text-white/70">(Office)</span></p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
               </TabsContent>
             </Tabs>
           </div>
