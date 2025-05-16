@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import DashboardLayout from '@/components/layout/DashboardLayout';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
@@ -250,7 +249,7 @@ const Network = () => {
                           <div className="text-white/60">Connected</div>
                           <div className="text-white">{device.connected}</div>
                         </div>
-                        <Button variant="ghost" size="sm" className="ml-2 text-white">Details</Button>
+                        <Button variant="ghost" size="sm" className="ml-2 text-cosmic-amber hover:text-cosmic-amber/80 hover:bg-cosmic-amber/10">Details</Button>
                       </div>
                     </div>
                   ))}
@@ -258,7 +257,7 @@ const Network = () => {
               </CardContent>
               <CardFooter className="border-t border-white/10 flex justify-center pt-4">
                 <Button variant="outline" className="border-cosmic-teal/20 bg-cosmic-blue/40">
-                  <span className="text-black">View All 24 Devices</span>
+                  <span className="text-white">View All 24 Devices</span>
                 </Button>
               </CardFooter>
             </Card>
