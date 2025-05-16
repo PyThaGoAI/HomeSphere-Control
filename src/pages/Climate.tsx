@@ -118,7 +118,7 @@ const Climate = () => {
           </div>
         </div>
         
-        <div className="p-3 sm:p-6 bg-[#1A1F2C] backdrop-blur-lg border border-cosmic-teal/50 rounded-xl shadow-xl shadow-cosmic-teal/10">
+        <div className="p-3 sm:p-6 bg-cosmic-blue/30 backdrop-blur-lg border border-cosmic-teal/50 rounded-xl shadow-xl shadow-cosmic-teal/10">
           <div className="flex items-center mb-3 sm:mb-4">
             <Thermometer size={20} className="text-cosmic-teal mr-2" />
             <h2 className="font-orbitron text-base sm:text-lg text-white">
