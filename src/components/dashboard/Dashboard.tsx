@@ -11,7 +11,7 @@ import WeatherWidget from './WeatherWidget';
 
 const Dashboard = () => {
   return (
-    <div className="space-y-10 max-w-7xl mx-auto">
+    <div className="space-y-10 w-full mx-auto">
       {/* Home Status Section with enhanced layout */}
       <div className="flex flex-col items-center justify-center mb-10 relative">
         <div className="absolute w-64 h-64 bg-cosmic-teal/5 rounded-full blur-3xl -z-10"></div>
