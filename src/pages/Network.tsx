@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import DashboardLayout from '@/components/layout/DashboardLayout';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
@@ -30,10 +31,12 @@ const Network = () => {
               disabled={scanningNetwork}
               onClick={startNetworkScan}
             >
-              <RefreshCw size={16} className={`mr-2 ${scanningNetwork ? 'animate-spin' : ''}`} />
-              {scanningNetwork ? 'Scanning...' : 'Scan Network'}
+              <RefreshCw size={16} className={`mr-2 text-white ${scanningNetwork ? 'animate-spin' : ''}`} />
+              <span className="text-white">{scanningNetwork ? 'Scanning...' : 'Scan Network'}</span>
             </Button>
-            <Button className="bg-cosmic-teal hover:bg-cosmic-teal/80 text-black">Network Health Report</Button>
+            <Button className="bg-cosmic-teal hover:bg-cosmic-teal/80 text-black">
+              <span className="text-black">Network Health Report</span>
+            </Button>
           </div>
         </div>
         
@@ -100,21 +103,21 @@ const Network = () => {
               <div className="flex justify-between">
                 <div className="text-center p-3 bg-white/5 rounded-lg flex-1">
                   <div className="text-xs text-white/60">Connected Devices</div>
-                  <div className="text-2xl font-medium">24</div>
+                  <div className="text-2xl font-medium text-white">24</div>
                 </div>
                 <div className="text-center p-3 bg-white/5 rounded-lg flex-1 mx-2">
                   <div className="text-xs text-white/60">Network Load</div>
-                  <div className="text-2xl font-medium">38%</div>
+                  <div className="text-2xl font-medium text-white">38%</div>
                 </div>
                 <div className="text-center p-3 bg-white/5 rounded-lg flex-1">
                   <div className="text-xs text-white/60">Avg. Latency</div>
-                  <div className="text-2xl font-medium">8ms</div>
+                  <div className="text-2xl font-medium text-white">8ms</div>
                 </div>
               </div>
               
               <div className="space-y-2">
                 <div className="space-y-1">
-                  <div className="flex justify-between text-xs">
+                  <div className="flex justify-between text-xs text-white">
                     <span>Download Speed</span>
                     <span>482 Mbps</span>
                   </div>
@@ -122,7 +125,7 @@ const Network = () => {
                 </div>
                 
                 <div className="space-y-1">
-                  <div className="flex justify-between text-xs">
+                  <div className="flex justify-between text-xs text-white">
                     <span>Upload Speed</span>
                     <span>125 Mbps</span>
                   </div>
@@ -130,7 +133,7 @@ const Network = () => {
                 </div>
                 
                 <div className="space-y-1">
-                  <div className="flex justify-between text-xs">
+                  <div className="flex justify-between text-xs text-white">
                     <span>Coverage Quality</span>
                     <span>92%</span>
                   </div>
@@ -203,10 +206,10 @@ const Network = () => {
         
         <Tabs defaultValue="devices" className="w-full">
           <TabsList className="bg-cosmic-blue/30 border border-cosmic-teal/20">
-            <TabsTrigger value="devices">Connected Devices</TabsTrigger>
-            <TabsTrigger value="mesh">Mesh Nodes</TabsTrigger>
-            <TabsTrigger value="security">Security</TabsTrigger>
-            <TabsTrigger value="optimization">Optimization</TabsTrigger>
+            <TabsTrigger value="devices" className="text-white">Connected Devices</TabsTrigger>
+            <TabsTrigger value="mesh" className="text-white">Mesh Nodes</TabsTrigger>
+            <TabsTrigger value="security" className="text-white">Security</TabsTrigger>
+            <TabsTrigger value="optimization" className="text-white">Optimization</TabsTrigger>
           </TabsList>
           
           <TabsContent value="devices" className="mt-4">
@@ -247,14 +250,14 @@ const Network = () => {
                           <div className="text-white/60">Connected</div>
                           <div className="text-white">{device.connected}</div>
                         </div>
-                        <Button variant="ghost" size="sm" className="ml-2">Details</Button>
+                        <Button variant="ghost" size="sm" className="ml-2 text-white">Details</Button>
                       </div>
                     </div>
                   ))}
                 </div>
               </CardContent>
               <CardFooter className="border-t border-white/10 flex justify-center pt-4">
-                <Button variant="outline" className="border-cosmic-teal/20">View All 24 Devices</Button>
+                <Button variant="outline" className="border-cosmic-teal/20 text-white">View All 24 Devices</Button>
               </CardFooter>
             </Card>
           </TabsContent>
@@ -270,20 +273,20 @@ const Network = () => {
                   <div className="p-4 bg-white/5 rounded-lg border border-cosmic-teal/30">
                     <div className="flex justify-between items-start mb-3">
                       <div>
-                        <h3 className="font-medium">Main Router</h3>
+                        <h3 className="font-medium text-white">Main Router</h3>
                         <p className="text-xs text-white/60">Gateway Node</p>
                       </div>
-                      <Badge className="bg-cosmic-teal text-black">Primary</Badge>
+                      <Badge className="bg-cosmic-teal text-white">Primary</Badge>
                     </div>
                     <div className="space-y-3 mt-4">
                       <div className="space-y-1">
-                        <div className="flex justify-between text-xs">
+                        <div className="flex justify-between text-xs text-white">
                           <span>Signal Quality</span>
                           <span>100%</span>
                         </div>
                         <Progress value={100} className="h-1" indicatorClassName="bg-cosmic-teal" />
                       </div>
-                      <div className="grid grid-cols-2 gap-2 text-xs">
+                      <div className="grid grid-cols-2 gap-2 text-xs text-white">
                         <div>
                           <span className="text-white/60">Location</span>
                           <p>Living Room</p>
@@ -307,20 +310,20 @@ const Network = () => {
                   <div className="p-4 bg-white/5 rounded-lg border border-white/10">
                     <div className="flex justify-between items-start mb-3">
                       <div>
-                        <h3 className="font-medium">Mesh Node 1</h3>
+                        <h3 className="font-medium text-white">Mesh Node 1</h3>
                         <p className="text-xs text-white/60">Extender Node</p>
                       </div>
-                      <Badge className="bg-white/20">Connected</Badge>
+                      <Badge className="bg-white/20 text-white">Connected</Badge>
                     </div>
                     <div className="space-y-3 mt-4">
                       <div className="space-y-1">
-                        <div className="flex justify-between text-xs">
+                        <div className="flex justify-between text-xs text-white">
                           <span>Signal Quality</span>
                           <span>92%</span>
                         </div>
                         <Progress value={92} className="h-1" indicatorClassName="bg-cosmic-teal" />
                       </div>
-                      <div className="grid grid-cols-2 gap-2 text-xs">
+                      <div className="grid grid-cols-2 gap-2 text-xs text-white">
                         <div>
                           <span className="text-white/60">Location</span>
                           <p>Upstairs Hall</p>
@@ -344,20 +347,20 @@ const Network = () => {
                   <div className="p-4 bg-white/5 rounded-lg border border-white/10">
                     <div className="flex justify-between items-start mb-3">
                       <div>
-                        <h3 className="font-medium">Mesh Node 2</h3>
+                        <h3 className="font-medium text-white">Mesh Node 2</h3>
                         <p className="text-xs text-white/60">Extender Node</p>
                       </div>
-                      <Badge className="bg-white/20">Connected</Badge>
+                      <Badge className="bg-white/20 text-white">Connected</Badge>
                     </div>
                     <div className="space-y-3 mt-4">
                       <div className="space-y-1">
-                        <div className="flex justify-between text-xs">
+                        <div className="flex justify-between text-xs text-white">
                           <span>Signal Quality</span>
                           <span>86%</span>
                         </div>
                         <Progress value={86} className="h-1" indicatorClassName="bg-cosmic-teal" />
                       </div>
-                      <div className="grid grid-cols-2 gap-2 text-xs">
+                      <div className="grid grid-cols-2 gap-2 text-xs text-white">
                         <div>
                           <span className="text-white/60">Location</span>
                           <p>Basement</p>
@@ -381,7 +384,7 @@ const Network = () => {
                 
                 <div className="flex flex-col items-center justify-center p-8 border border-dashed border-cosmic-teal/20 rounded-lg">
                   <Zap size={40} className="text-cosmic-teal/40 mb-4" />
-                  <h3 className="text-lg font-medium mb-1">Add Mesh Node</h3>
+                  <h3 className="text-lg font-medium text-white mb-1">Add Mesh Node</h3>
                   <p className="text-sm text-white/60 text-center max-w-xs mb-4">Extend your network coverage by adding another mesh node to your network</p>
                   <Button className="bg-cosmic-teal hover:bg-cosmic-teal/80 text-black">Add New Node</Button>
                 </div>
@@ -406,9 +409,9 @@ const Network = () => {
                       { feature: 'Content Filtering', status: 'Configured', icon: <CheckCircle2 size={18} className="text-cosmic-teal" /> },
                     ].map((item, i) => (
                       <div key={i} className="flex justify-between items-center p-3 bg-white/5 rounded-lg">
-                        <span>{item.feature}</span>
+                        <span className="text-white">{item.feature}</span>
                         <div className="flex items-center gap-2">
-                          <span className="text-sm">{item.status}</span>
+                          <span className="text-sm text-white">{item.status}</span>
                           {item.icon}
                         </div>
                       </div>
@@ -426,27 +429,27 @@ const Network = () => {
                   <div className="mb-6">
                     <div className="text-center p-6 bg-white/5 rounded-lg">
                       <CheckCircle2 size={48} className="mx-auto text-cosmic-teal mb-2" />
-                      <h3 className="text-lg font-medium mb-1">Network Secure</h3>
+                      <h3 className="text-lg font-medium text-white mb-1">Network Secure</h3>
                       <p className="text-sm text-white/70">No threats detected in the last 7 days</p>
                     </div>
                   </div>
                   
                   <div className="space-y-2">
-                    <h4 className="text-sm font-medium mb-2">Protection Summary</h4>
+                    <h4 className="text-sm font-medium text-white mb-2">Protection Summary</h4>
                     <div className="grid grid-cols-2 gap-3 text-center">
                       <div className="p-3 bg-white/5 rounded-lg">
-                        <div className="text-2xl font-medium">32</div>
+                        <div className="text-2xl font-medium text-white">32</div>
                         <div className="text-xs text-white/60">Threats Blocked</div>
                       </div>
                       <div className="p-3 bg-white/5 rounded-lg">
-                        <div className="text-2xl font-medium">18</div>
+                        <div className="text-2xl font-medium text-white">18</div>
                         <div className="text-xs text-white/60">Unsafe Sites</div>
                       </div>
                     </div>
                   </div>
                 </CardContent>
                 <CardFooter className="border-t border-white/10 flex justify-end pt-4">
-                  <Button variant="outline" className="border-cosmic-teal/20">Security Report</Button>
+                  <Button variant="outline" className="border-cosmic-teal/20 text-white">Security Report</Button>
                 </CardFooter>
               </Card>
             </div>
@@ -462,7 +465,7 @@ const Network = () => {
                 <div className="space-y-6">
                   <div className="flex items-center justify-between p-4 bg-white/5 rounded-lg border border-white/10">
                     <div>
-                      <h3 className="font-medium mb-1">Auto Channel Selection</h3>
+                      <h3 className="font-medium text-white mb-1">Auto Channel Selection</h3>
                       <p className="text-sm text-white/60">Automatically choose the best WiFi channel with least interference</p>
                     </div>
                     <div className="w-12 h-6 bg-cosmic-teal/20 rounded-full relative">
@@ -472,7 +475,7 @@ const Network = () => {
                   
                   <div className="flex items-center justify-between p-4 bg-white/5 rounded-lg border border-white/10">
                     <div>
-                      <h3 className="font-medium mb-1">Band Steering</h3>
+                      <h3 className="font-medium text-white mb-1">Band Steering</h3>
                       <p className="text-sm text-white/60">Guide compatible devices to 5GHz band for better performance</p>
                     </div>
                     <div className="w-12 h-6 bg-cosmic-teal/20 rounded-full relative">
@@ -482,7 +485,7 @@ const Network = () => {
                   
                   <div className="flex items-center justify-between p-4 bg-white/5 rounded-lg border border-white/10">
                     <div>
-                      <h3 className="font-medium mb-1">Traffic Prioritization</h3>
+                      <h3 className="font-medium text-white mb-1">Traffic Prioritization</h3>
                       <p className="text-sm text-white/60">Prioritize critical smart home devices over general web browsing</p>
                     </div>
                     <div className="w-12 h-6 bg-cosmic-teal/20 rounded-full relative">
@@ -492,7 +495,7 @@ const Network = () => {
                   
                   <div className="flex items-center justify-between p-4 bg-white/5 rounded-lg border border-white/10">
                     <div>
-                      <h3 className="font-medium mb-1">Automatic Firmware Updates</h3>
+                      <h3 className="font-medium text-white mb-1">Automatic Firmware Updates</h3>
                       <p className="text-sm text-white/60">Keep your network devices updated with latest security patches</p>
                     </div>
                     <div className="w-12 h-6 bg-white/10 rounded-full relative">
