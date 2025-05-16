@@ -1,5 +1,6 @@
 import DashboardLayout from '@/components/layout/DashboardLayout';
 import { useState } from 'react';
+import { useTheme } from '@/contexts/ThemeContext';
 import { 
   Settings as SettingsIcon, 
   User, 
@@ -50,11 +51,27 @@ const Settings = () => {
     guestActivity: true
   });
   
+  const { currentTheme, setTheme } = useTheme();
+  
   const handleNotificationChange = (key) => {
     setNotifications({
       ...notifications,
       [key]: !notifications[key]
     });
+  };
+
+  // Lista noastră de culori pentru teme
+  const colorSchemes = [
+    { name: "Cosmic Teal", color: "#00E5E5" },
+    { name: "Cosmic Purple", color: "#9b87f5" },
+    { name: "Cosmic Pink", color: "#D946EF" },
+    { name: "Cosmic Orange", color: "#F97316" },
+    { name: "Cosmic Blue", color: "#0EA5E9" },
+    { name: "Cosmic Green", color: "#10B981" }
+  ];
+
+  const handleThemeChange = (theme) => {
+    setTheme(theme);
   };
 
   return (
@@ -63,7 +80,7 @@ const Settings = () => {
         <div className="flex items-center mb-6">
           <div className="flex items-center">
             <div className="p-2 rounded-full bg-cosmic-blue/50 mr-2">
-              <SettingsIcon size={20} className="text-cosmic-teal" />
+              <SettingsIcon size={20} className="text-cosmic-teal" style={{ color: currentTheme.color }} />
             </div>
             <h1 className="text-2xl font-orbitron">Settings</h1>
           </div>
@@ -88,9 +105,13 @@ const Settings = () => {
                   <button
                     key={item.id}
                     className={`flex items-center w-full px-3 py-2 rounded-lg transition-colors ${
-                      activeTab === item.id ? 'bg-cosmic-teal/20 text-cosmic-teal' : 'hover:bg-cosmic-blue/50'
+                      activeTab === item.id ? 'text-cosmic-teal' : 'hover:bg-cosmic-blue/50'
                     }`}
                     onClick={() => setActiveTab(item.id)}
+                    style={{ 
+                      backgroundColor: activeTab === item.id ? `${currentTheme.color}20` : '',
+                      color: activeTab === item.id ? currentTheme.color : ''
+                    }}
                   >
                     <item.icon size={18} className="mr-2" />
                     <span>{item.label}</span>
@@ -638,25 +659,25 @@ const Settings = () => {
                     
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                       <div className="relative cursor-pointer group">
-                        <div className="border-2 border-cosmic-teal rounded-lg p-1">
+                        <div className="border-2 border-cosmic-teal rounded-lg p-1" style={{ borderColor: currentTheme.color }}>
                           <div className="h-24 rounded bg-cosmic-blue/80 overflow-hidden">
                             <div className="p-2">
-                              <div className="h-3 w-full bg-cosmic-teal/20 rounded mb-2"></div>
-                              <div className="h-3 w-2/3 bg-cosmic-teal/20 rounded"></div>
+                              <div className="h-3 w-full bg-cosmic-teal/20 rounded mb-2" style={{ backgroundColor: `${currentTheme.color}20` }}></div>
+                              <div className="h-3 w-2/3 bg-cosmic-teal/20 rounded" style={{ backgroundColor: `${currentTheme.color}20` }}></div>
                             </div>
                           </div>
                           <div className="flex justify-between pt-2 px-2">
                             <span className="text-sm font-medium">Dark</span>
-                            <div className="w-4 h-4 rounded-full bg-cosmic-teal flex items-center justify-center">
+                            <div className="w-4 h-4 rounded-full bg-cosmic-teal flex items-center justify-center" style={{ backgroundColor: currentTheme.color }}>
                               <Check size={10} className="text-black" />
                             </div>
                           </div>
                         </div>
-                        <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 bg-cosmic-teal/10 transition-opacity pointer-events-none"></div>
+                        <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 bg-cosmic-teal/10 transition-opacity pointer-events-none" style={{ backgroundColor: `${currentTheme.color}10` }}></div>
                       </div>
                       
                       <div className="relative cursor-pointer group">
-                        <div className="border-2 border-cosmic-blue/20 hover:border-cosmic-teal/50 transition-colors rounded-lg p-1">
+                        <div className="border-2 border-cosmic-blue/20 hover:border-cosmic-teal/50 transition-colors rounded-lg p-1" style={{ borderColor: `${currentTheme.color}20`, hoverBorderColor: `${currentTheme.color}50` }}>
                           <div className="h-24 rounded bg-white overflow-hidden">
                             <div className="p-2">
                               <div className="h-3 w-full bg-gray-200 rounded mb-2"></div>
@@ -668,11 +689,11 @@ const Settings = () => {
                             <div className="w-4 h-4 rounded-full bg-cosmic-blue/20"></div>
                           </div>
                         </div>
-                        <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 bg-cosmic-teal/10 transition-opacity pointer-events-none"></div>
+                        <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 bg-cosmic-teal/10 transition-opacity pointer-events-none" style={{ backgroundColor: `${currentTheme.color}10` }}></div>
                       </div>
                       
                       <div className="relative cursor-pointer group">
-                        <div className="border-2 border-cosmic-blue/20 hover:border-cosmic-teal/50 transition-colors rounded-lg p-1">
+                        <div className="border-2 border-cosmic-blue/20 hover:border-cosmic-teal/50 transition-colors rounded-lg p-1" style={{ borderColor: `${currentTheme.color}20`, hoverBorderColor: `${currentTheme.color}50` }}>
                           <div className="h-24 rounded overflow-hidden" style={{ background: 'linear-gradient(to bottom, #fff 50%, #121726 50%)' }}>
                             <div className="p-2">
                               <div className="h-3 w-full bg-gray-200/50 rounded mb-2"></div>
@@ -684,7 +705,7 @@ const Settings = () => {
                             <div className="w-4 h-4 rounded-full bg-cosmic-blue/20"></div>
                           </div>
                         </div>
-                        <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 bg-cosmic-teal/10 transition-opacity pointer-events-none"></div>
+                        <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 bg-cosmic-teal/10 transition-opacity pointer-events-none" style={{ backgroundColor: `${currentTheme.color}10` }}></div>
                       </div>
                     </div>
                   </div>
@@ -700,16 +721,20 @@ const Settings = () => {
                     </div>
                     
                     <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-3">
-                      {[
-                        { name: "Cosmic Teal", color: "#00E5E5", selected: true },
-                        { name: "Cosmic Purple", color: "#9b87f5", selected: false },
-                        { name: "Cosmic Pink", color: "#D946EF", selected: false },
-                        { name: "Cosmic Orange", color: "#F97316", selected: false },
-                        { name: "Cosmic Blue", color: "#0EA5E9", selected: false },
-                        { name: "Cosmic Green", color: "#10B981", selected: false }
-                      ].map((scheme) => (
-                        <div key={scheme.name} className="flex flex-col items-center">
-                          <div className={`w-12 h-12 rounded-full ${scheme.selected ? 'ring-2 ring-offset-4 ring-offset-cosmic-blue/30 ring-white' : ''}`} style={{ background: scheme.color }}></div>
+                      {colorSchemes.map((scheme) => (
+                        <div 
+                          key={scheme.name} 
+                          className="flex flex-col items-center"
+                          onClick={() => handleThemeChange(scheme)}
+                        >
+                          <div 
+                            className={`w-12 h-12 rounded-full cursor-pointer ${
+                              currentTheme.name === scheme.name ? 
+                                'ring-2 ring-offset-4 ring-offset-cosmic-blue/30 ring-white' : 
+                                'hover:ring-1 hover:ring-white/50 hover:ring-offset-2 hover:ring-offset-cosmic-blue/20'
+                            }`} 
+                            style={{ background: scheme.color }}
+                          ></div>
                           <span className="text-xs mt-2">{scheme.name}</span>
                         </div>
                       ))}
