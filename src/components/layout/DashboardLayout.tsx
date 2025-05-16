@@ -21,9 +21,9 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
           <Header />
           <div className="flex flex-1 overflow-hidden w-full">
             <Sidebar />
-            <main className="flex-1 overflow-y-auto overflow-x-hidden p-2 sm:p-3 md:p-4 lg:p-6 flex flex-col w-full max-w-full">
+            <main className="flex-1 overflow-y-auto overflow-x-hidden p-3 sm:p-4 md:p-6 lg:p-8 flex flex-col w-full max-w-full">
               <div className="stars-container absolute inset-0 overflow-hidden z-0 pointer-events-none">
-                {Array.from({ length: 100 }).map((_, i) => (
+                {Array.from({ length: 150 }).map((_, i) => (
                   <div
                     key={i}
                     className="star"
@@ -37,7 +37,7 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
                   />
                 ))}
                 {/* Meteors */}
-                {Array.from({ length: 5 }).map((_, i) => (
+                {Array.from({ length: 8 }).map((_, i) => (
                   <div
                     key={`meteor-${i}`}
                     className="absolute h-0.5 w-20 bg-white/30 animate-meteor"
