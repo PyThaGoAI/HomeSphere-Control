@@ -1,3 +1,4 @@
+
 import DashboardLayout from '@/components/layout/DashboardLayout';
 import { useState } from 'react';
 import { 
@@ -19,9 +20,11 @@ import {
 
 const SettingsSection = ({ title, children }) => {
   return (
-    <div className="p-6 bg-cosmic-blue/30 backdrop-blur-md border border-cosmic-teal/20 rounded-xl mb-6">
-      <h2 className="font-orbitron text-lg mb-4">{title}</h2>
-      {children}
+    <div className="p-3 sm:p-4 md:p-6 bg-cosmic-blue/30 backdrop-blur-md border border-cosmic-teal/20 rounded-xl mb-4 md:mb-6 overflow-hidden w-full">
+      <h2 className="font-orbitron text-base sm:text-lg mb-2 sm:mb-3 md:mb-4">{title}</h2>
+      <div className="w-full">
+        {children}
+      </div>
     </div>
   );
 };
