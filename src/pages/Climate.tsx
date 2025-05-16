@@ -1,3 +1,4 @@
+
 import DashboardLayout from '@/components/layout/DashboardLayout';
 import { useState } from 'react';
 import { Thermometer } from 'lucide-react'; // Icon for the premium section
@@ -8,8 +9,8 @@ const Climate = () => {
   
   return (
     <DashboardLayout>
-      <div className="flex flex-col space-y-6">
-        <div className="flex items-center">
+      <div className="flex flex-col space-y-6 w-full">
+        <div className="flex items-center w-full">
           <h1 className="text-2xl font-orbitron">Climate Control</h1>
           <div className="ml-auto flex space-x-3">
             <button className="px-4 py-2 bg-cosmic-blue/50 rounded-lg hover:bg-cosmic-blue/70 transition-colors">
@@ -21,8 +22,8 @@ const Climate = () => {
           </div>
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          <div className="p-6 bg-cosmic-blue/30 backdrop-blur-md border border-cosmic-teal/20 rounded-xl col-span-1">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 w-full">
+          <div className="p-6 bg-cosmic-blue/30 backdrop-blur-md border border-cosmic-teal/20 rounded-xl col-span-1 w-full">
             <h2 className="font-orbitron text-lg mb-4">Climate Zones</h2>
             <div className="space-y-2">
               {["Living Room", "Kitchen", "Bedroom", "Bathroom", "Office"].map((zone) => (
@@ -43,11 +44,11 @@ const Climate = () => {
             </div>
           </div>
           
-          <div className="p-6 bg-cosmic-blue/30 backdrop-blur-md border border-cosmic-teal/20 rounded-xl col-span-2">
+          <div className="p-6 bg-cosmic-blue/30 backdrop-blur-md border border-cosmic-teal/20 rounded-xl col-span-2 w-full">
             <h2 className="font-orbitron text-lg mb-2">{activeZone} Controls</h2>
             <div className="mb-6 text-white/70 text-sm">Current temperature: 22.5°C • Target: 22°C</div>
             
-            <div className="flex flex-col md:flex-row md:space-x-8">
+            <div className="flex flex-col md:flex-row md:space-x-8 w-full">
               <div className="flex flex-col items-center mb-6 md:mb-0">
                 <div className="w-36 h-36 rounded-full cosmic-gradient flex items-center justify-center relative mb-4">
                   <span className="font-orbitron text-2xl">22.5°</span>
@@ -63,7 +64,7 @@ const Climate = () => {
                 </div>
               </div>
               
-              <div className="flex-1 grid grid-cols-2 gap-4">
+              <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
                 <div className="p-4 bg-cosmic-blue/50 rounded-lg">
                   <h3 className="text-sm text-white/70 mb-1">Humidity</h3>
                   <div className="flex items-center justify-between">
@@ -118,7 +119,7 @@ const Climate = () => {
           </div>
         </div>
         
-        <div className="p-3 sm:p-6 bg-cosmic-blue/30 backdrop-blur-lg border border-cosmic-teal/50 rounded-xl shadow-xl shadow-cosmic-teal/10">
+        <div className="p-3 sm:p-6 bg-cosmic-blue/30 backdrop-blur-lg border border-cosmic-teal/50 rounded-xl shadow-xl shadow-cosmic-teal/10 w-full">
           <div className="flex items-center mb-3 sm:mb-4">
             <Thermometer size={20} className="text-cosmic-teal mr-2" />
             <h2 className="font-orbitron text-base sm:text-lg text-white">
@@ -126,7 +127,7 @@ const Climate = () => {
               <span className="text-xs font-normal text-cosmic-teal opacity-80 ml-1">(Premium)</span>
             </h2>
           </div>
-          <div className="h-48 sm:h-56 bg-transparent rounded-lg">
+          <div className="h-48 sm:h-56 bg-transparent rounded-lg w-full">
             <TemperatureHistoryChart />
           </div>
           <div className="mt-3 sm:mt-4 text-xs sm:text-sm text-white/70">
