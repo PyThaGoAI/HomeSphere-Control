@@ -1,5 +1,5 @@
 import DashboardLayout from '@/components/layout/DashboardLayout';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { 
   Settings as SettingsIcon, 
   User, 
@@ -27,7 +27,6 @@ import {
   AlertTriangle,
   Save
 } from 'lucide-react';
-import { useColorScheme, AccentColor } from '@/hooks/useColorScheme';
 
 const SettingsSection = ({ title, children }) => {
   return (
@@ -50,13 +49,6 @@ const Settings = () => {
     systemUpdates: true,
     guestActivity: true
   });
-  
-  const { selectedColor, changeAccentColor, accentColors } = useColorScheme();
-  
-  // Apply the saved color scheme on first render
-  useEffect(() => {
-    document.documentElement.style.setProperty('--accent-color', selectedColor.cssVar);
-  }, [selectedColor]);
   
   const handleNotificationChange = (key) => {
     setNotifications({
@@ -708,18 +700,16 @@ const Settings = () => {
                     </div>
                     
                     <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-3">
-                      {accentColors.map((scheme) => (
-                        <div 
-                          key={scheme.name} 
-                          className="flex flex-col items-center cursor-pointer"
-                          onClick={() => changeAccentColor(scheme)}
-                        >
-                          <div 
-                            className={`w-12 h-12 rounded-full transition-all duration-300 ${
-                              selectedColor.name === scheme.name ? 'ring-2 ring-offset-4 ring-offset-cosmic-blue/30 ring-white' : 'hover:scale-110'
-                            }`} 
-                            style={{ background: scheme.color }}
-                          ></div>
+                      {[
+                        { name: "Cosmic Teal", color: "#00E5E5", selected: true },
+                        { name: "Cosmic Purple", color: "#9b87f5", selected: false },
+                        { name: "Cosmic Pink", color: "#D946EF", selected: false },
+                        { name: "Cosmic Orange", color: "#F97316", selected: false },
+                        { name: "Cosmic Blue", color: "#0EA5E9", selected: false },
+                        { name: "Cosmic Green", color: "#10B981", selected: false }
+                      ].map((scheme) => (
+                        <div key={scheme.name} className="flex flex-col items-center">
+                          <div className={`w-12 h-12 rounded-full ${scheme.selected ? 'ring-2 ring-offset-4 ring-offset-cosmic-blue/30 ring-white' : ''}`} style={{ background: scheme.color }}></div>
                           <span className="text-xs mt-2">{scheme.name}</span>
                         </div>
                       ))}
